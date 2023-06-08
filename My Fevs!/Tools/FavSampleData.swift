@@ -8,8 +8,8 @@
 import SwiftUI
 
 class FavSampleData: ObservableObject {
-    @Published var sampleData: [FavListItem] = [
-        FavListItem(
+    @Published var sampleData: [FavCategory] = [
+        FavCategory(
             icon: "film.fill",
             label: "Movie",
             favItems: [
@@ -19,7 +19,7 @@ class FavSampleData: ObservableObject {
                 FavItem(title: "Spider-Man", rate: 4.7, category: "Movie")
             ]
         ),
-        FavListItem(
+        FavCategory(
             icon: "theatermasks.fill",
             label: "TV Show",
             favItems: [
@@ -29,7 +29,7 @@ class FavSampleData: ObservableObject {
                 FavItem(title: "Glee", rate: 4.7, category: "TV Show")
             ]
         ),
-        FavListItem(
+        FavCategory(
             icon: "paintbrush.pointed.fill",
             label: "Anime",
             favItems: [
@@ -42,18 +42,18 @@ class FavSampleData: ObservableObject {
     
     ]
     
-    func add(_ item: FavListItem) {
+    func add(_ item: FavCategory) {
         sampleData.append(item)
     }
         
-    func remove(_ item: FavListItem) {
+    func remove(_ item: FavCategory) {
         sampleData.removeAll { $0.id == item.id}
     }
     
-    func getBindingToData(_ item: FavListItem) -> Binding<FavListItem>? {
-        Binding<FavListItem>(
+    func getBindingToData(_ item: FavCategory) -> Binding<FavCategory>? {
+        Binding<FavCategory>(
             get: {
-                guard let index = self.sampleData.firstIndex(where: { $0.id == item.id }) else { return FavListItem.delete }
+                guard let index = self.sampleData.firstIndex(where: { $0.id == item.id }) else { return FavCategory.delete }
                 return self.sampleData[index]
             },
             set: { item in

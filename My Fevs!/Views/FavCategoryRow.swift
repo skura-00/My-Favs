@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct FavItemRow: View {
-    let favList: FavListItem
+struct FavCategoryRow: View {
+    let favList: FavCategory
     
     var body: some View {
         HStack {
@@ -31,6 +31,6 @@ struct FavItemRow: View {
 
 struct EventRow_Previews: PreviewProvider {
     static var previews: some View {
-        FavItemRow(favList: FavListItem.example)
+        FavCategoryRow(favList: FavCategory.example)
     }
 }

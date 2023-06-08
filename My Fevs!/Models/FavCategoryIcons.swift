@@ -5,7 +5,7 @@
 //  Created by 倉田沙智 on 2023/06/08.
 //
 
-struct FavListIcons {
+struct FavCategoryIcons {
     
     static func iconName() -> String {
         if let name = iconNames.randomElement() {

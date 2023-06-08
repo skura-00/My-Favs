@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct FavListItem: Identifiable, Hashable, Codable {
+struct FavCategory: Identifiable, Hashable, Codable {
     var id = UUID()
-    var icon: String = FavListIcons.iconName()
+    var icon: String = FavCategoryIcons.iconName()
     var label: String = ""
     var favItems = [FavItem(title: "", rate: 0, category: "")]
     
-    static var example = FavListItem(
+    static var example = FavCategory(
         icon: "film.fill",
         label: "Movies",
         favItems: [
@@ -24,5 +24,5 @@ struct FavListItem: Identifiable, Hashable, Codable {
         ]
     )
     
-    static var delete = FavListItem(icon: "trash")
+    static var delete = FavCategory(icon: "trash")
 }

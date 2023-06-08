@@ -6,8 +6,8 @@
 //
 import SwiftUI
 
-struct FavListModifier: View {
-    @Binding var favListItem: FavListItem
+struct FavCategoryModifier: View {
+    @Binding var favListItem: FavCategory
     @State var isNew = false
     
     @Environment(\.dismiss) private var dismiss
@@ -16,28 +16,21 @@ struct FavListModifier: View {
 
     var body: some View {
         List {
-            HStack {
-//                Button {
-//                    isPickingSymbol.toggle()
-//                } label: {
-//                    Image(systemName: event.symbol)
-//                        .imageScale(.large)
-//                        .foregroundColor(Color(event.color))
-//                }
-//                .buttonStyle(.plain)
-//                .padding(.horizontal, 5)
-
-                TextField("New Category", text: $favListItem.label)
-                    .font(.title2)
-            }
-            .padding(.top, 5)
-            
-            
-            Text("List")
-                .fontWeight(.bold)
+//            HStack {
+////                Button {
+////                    isPickingSymbol.toggle()
+////                } label: {
+////                    Image(systemName: event.symbol)
+////                        .imageScale(.large)
+////                        .foregroundColor(Color(event.color))
+////                }
+////                .buttonStyle(.plain)
+////                .padding(.horizontal, 5)
+//            }
+//            .padding(.top, 5)
             
             ForEach($favListItem.favItems) { $item in
-                FavItemRow(favList: favListItem)
+                FavCategoryRow(favList: favListItem)
             }
             .onDelete(perform: { indexSet in
                 favListItem.favItems.remove(atOffsets: indexSet)
@@ -45,6 +38,7 @@ struct FavListModifier: View {
 
             
         }
+        .navigationTitle($favListItem.label)
 
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
@@ -57,7 +51,7 @@ struct FavListModifier: View {
 
 struct FavListModifier_Previews: PreviewProvider {
     static var previews: some View {
-        FavListModifier(favListItem: .constant(FavListItem()), isNew: true)
+        FavCategoryModifier(favListItem: .constant(FavCategory()), isNew: true)
             .environmentObject(FavSampleData())
     }
 }

@@ -14,11 +14,11 @@
 		BBE2BEC22A31942400564536 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEC12A31942400564536 /* Persistence.swift */; };
 		BBE2BEC52A31942400564536 /* My_Fevs_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEC32A31942400564536 /* My_Fevs_.xcdatamodeld */; };
 		BBE2BECC2A31ADD500564536 /* FavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BECB2A31ADD500564536 /* FavItem.swift */; };
-		BBE2BECE2A31B03300564536 /* FavListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BECD2A31B03300564536 /* FavListItem.swift */; };
+		BBE2BECE2A31B03300564536 /* FavCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BECD2A31B03300564536 /* FavCategory.swift */; };
 		BBE2BED02A31B14D00564536 /* FavSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BECF2A31B14D00564536 /* FavSampleData.swift */; };
-		BBE2BED52A31BCAD00564536 /* FavItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BED42A31BCAD00564536 /* FavItemRow.swift */; };
-		BBE2BED72A31C0F600564536 /* FavListIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BED62A31C0F600564536 /* FavListIcons.swift */; };
-		BBE2BEDB2A31CCF300564536 /* FavListModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEDA2A31CCF200564536 /* FavListModifier.swift */; };
+		BBE2BED52A31BCAD00564536 /* FavCategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BED42A31BCAD00564536 /* FavCategoryRow.swift */; };
+		BBE2BED72A31C0F600564536 /* FavCategoryIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BED62A31C0F600564536 /* FavCategoryIcons.swift */; };
+		BBE2BEDB2A31CCF300564536 /* FavCategoryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEDA2A31CCF200564536 /* FavCategoryModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +30,11 @@
 		BBE2BEC12A31942400564536 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BBE2BEC42A31942400564536 /* My_Fevs_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Fevs_.xcdatamodel; sourceTree = "<group>"; };
 		BBE2BECB2A31ADD500564536 /* FavItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavItem.swift; sourceTree = "<group>"; };
-		BBE2BECD2A31B03300564536 /* FavListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavListItem.swift; sourceTree = "<group>"; };
+		BBE2BECD2A31B03300564536 /* FavCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategory.swift; sourceTree = "<group>"; };
 		BBE2BECF2A31B14D00564536 /* FavSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavSampleData.swift; sourceTree = "<group>"; };
-		BBE2BED42A31BCAD00564536 /* FavItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavItemRow.swift; sourceTree = "<group>"; };
-		BBE2BED62A31C0F600564536 /* FavListIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavListIcons.swift; sourceTree = "<group>"; };
-		BBE2BEDA2A31CCF200564536 /* FavListModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavListModifier.swift; sourceTree = "<group>"; };
+		BBE2BED42A31BCAD00564536 /* FavCategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategoryRow.swift; sourceTree = "<group>"; };
+		BBE2BED62A31C0F600564536 /* FavCategoryIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategoryIcons.swift; sourceTree = "<group>"; };
+		BBE2BEDA2A31CCF200564536 /* FavCategoryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategoryModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +90,9 @@
 		BBE2BED12A31B3C700564536 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BBE2BECD2A31B03300564536 /* FavListItem.swift */,
+				BBE2BECD2A31B03300564536 /* FavCategory.swift */,
 				BBE2BECB2A31ADD500564536 /* FavItem.swift */,
-				BBE2BED42A31BCAD00564536 /* FavItemRow.swift */,
-				BBE2BED62A31C0F600564536 /* FavListIcons.swift */,
-				BBE2BEDA2A31CCF200564536 /* FavListModifier.swift */,
+				BBE2BED62A31C0F600564536 /* FavCategoryIcons.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,6 +108,8 @@
 		BBE2BED32A31B5D600564536 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BBE2BED42A31BCAD00564536 /* FavCategoryRow.swift */,
+				BBE2BEDA2A31CCF200564536 /* FavCategoryModifier.swift */,
 				BBE2BEBA2A31942300564536 /* FavListView.swift */,
 			);
 			path = Views;
@@ -189,12 +189,12 @@
 				BBE2BEC52A31942400564536 /* My_Fevs_.xcdatamodeld in Sources */,
 				BBE2BED02A31B14D00564536 /* FavSampleData.swift in Sources */,
 				BBE2BEBB2A31942300564536 /* FavListView.swift in Sources */,
-				BBE2BED72A31C0F600564536 /* FavListIcons.swift in Sources */,
+				BBE2BED72A31C0F600564536 /* FavCategoryIcons.swift in Sources */,
 				BBE2BEB92A31942300564536 /* My_Fevs_App.swift in Sources */,
-				BBE2BEDB2A31CCF300564536 /* FavListModifier.swift in Sources */,
-				BBE2BECE2A31B03300564536 /* FavListItem.swift in Sources */,
+				BBE2BEDB2A31CCF300564536 /* FavCategoryModifier.swift in Sources */,
+				BBE2BECE2A31B03300564536 /* FavCategory.swift in Sources */,
 				BBE2BECC2A31ADD500564536 /* FavItem.swift in Sources */,
-				BBE2BED52A31BCAD00564536 /* FavItemRow.swift in Sources */,
+				BBE2BED52A31BCAD00564536 /* FavCategoryRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

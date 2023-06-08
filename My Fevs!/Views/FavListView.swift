@@ -11,17 +11,17 @@ import CoreData
 
 struct FavListView: View {
     @ObservedObject var favItemData: FavSampleData
-    @State private var selection: FavListItem?
+    @State private var selection: FavCategory?
     /*#-code-walkthrough(5.eventData)*/
     @State private var isAddingCategory = false
-    @State private var newCategory = FavListItem()
+    @State private var newCategory = FavCategory()
 
     var body: some View {
         
         NavigationSplitView {
             List (selection: $selection) {
                 ForEach (favItemData.sampleData) { item in
-                    FavItemRow(favList: item)
+                    FavCategoryRow(favList: item)
                         .tag(item)
                     /*#-code-walkthrough(5.deleteEvents)*/
                         .swipeActions {
@@ -33,12 +33,13 @@ struct FavListView: View {
                             }
                         }
                 }
+                
             }
             .navigationTitle("Category")
             .toolbar {
                 ToolbarItem {
                     Button {
-                        newCategory = FavListItem()
+                        newCategory = FavCategory()
                         isAddingCategory = true
                     } label: {
                         Image(systemName: "plus")
@@ -47,7 +48,7 @@ struct FavListView: View {
             }
             .sheet(isPresented: $isAddingCategory) {
                 NavigationStack {
-                    FavListModifier(favListItem: $newCategory, isNew: true)
+                    FavCategoryModifier(favListItem: $newCategory, isNew: true)
                         .toolbar {
                            ToolbarItem(placement: .cancellationAction) {
                                Button("Cancel") {
@@ -69,7 +70,7 @@ struct FavListView: View {
         } detail: {
             ZStack {
                 if let item = selection, let itemBinding = favItemData.getBindingToData(item) {
-                    FavListModifier(favListItem: itemBinding)
+                    FavCategoryModifier(favListItem: itemBinding)
                 } else {
                     Text("Select an Event")
                         .foregroundStyle(.secondary)
