@@ -14,6 +14,9 @@ struct CategoryModifier: View {
     
     @Environment(\.dismiss) private var dismiss
     @FocusState var focusedTask: FavItem?
+    
+    
+    
 
     var body: some View {
         NavigationSplitView {
@@ -35,8 +38,11 @@ struct CategoryModifier: View {
 
                 
             }
-            .navigationTitle($favCategory.label)
-
+            .navigationTitle(
+                Text("\(favCategory.label)")
+                    .fontWeight(.bold)
+                    .font(.subheadline))
+            
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
