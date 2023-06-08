@@ -21,7 +21,7 @@ struct FavListView: View {
         NavigationSplitView {
             List (selection: $selection) {
                 ForEach (favItemData.sampleData) { item in
-                    FavCategoryRow(favList: item)
+                    CategoryRow(favList: item)
                         .tag(item)
                     /*#-code-walkthrough(5.deleteEvents)*/
                         .swipeActions {
@@ -48,7 +48,7 @@ struct FavListView: View {
             }
             .sheet(isPresented: $isAddingCategory) {
                 NavigationStack {
-                    FavCategoryModifier(favListItem: $newCategory, isNew: true)
+                    CategoryModifier(favCategory: $newCategory, isNew: true)
                         .toolbar {
                            ToolbarItem(placement: .cancellationAction) {
                                Button("Cancel") {
@@ -70,9 +70,9 @@ struct FavListView: View {
         } detail: {
             ZStack {
                 if let item = selection, let itemBinding = favItemData.getBindingToData(item) {
-                    FavCategoryModifier(favListItem: itemBinding)
+                    CategoryModifier(favCategory: itemBinding)
                 } else {
-                    Text("Select an Event")
+                    Text("Select a Category")
                         .foregroundStyle(.secondary)
                 }
             }

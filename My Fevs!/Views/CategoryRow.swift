@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavCategoryRow: View {
+struct CategoryRow: View {
     let favList: FavCategory
     
     var body: some View {
@@ -31,6 +31,6 @@ struct FavCategoryRow: View {
 
 struct EventRow_Previews: PreviewProvider {
     static var previews: some View {
-        FavCategoryRow(favList: FavCategory.example)
+        CategoryRow(favList: FavCategory.example)
     }
 }

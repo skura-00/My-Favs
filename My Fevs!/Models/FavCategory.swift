@@ -11,7 +11,7 @@ struct FavCategory: Identifiable, Hashable, Codable {
     var id = UUID()
     var icon: String = FavCategoryIcons.iconName()
     var label: String = ""
-    var favItems = [FavItem(title: "", rate: 0, category: "")]
+    var favItems = [FavItem(title: "Sample Title", rate: 0, category: "Other")]
     
     static var example = FavCategory(
         icon: "film.fill",
