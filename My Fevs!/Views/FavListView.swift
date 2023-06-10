@@ -1,90 +1,88 @@
 //
-//  ContentView.swift
+//  FavListView.swift
 //  My Fevs!
 //
-//  Created by 倉田沙智 on 2023/06/07.
+//  Created by 倉田沙智 on 2023/06/08.
 //
 
 import SwiftUI
-import CoreData
-
 
 struct FavListView: View {
     @ObservedObject var favItemData: FavSampleData
-    @State private var selection: FavCategory?
-    /*#-code-walkthrough(5.eventData)*/
-    @State private var isAddingCategory = false
-    @State private var newCategory = FavCategory()
-
+    @Binding var favCategory: FavCategory
+    @State var isNew = false
+    @State private var isShowingDetail = false
+    @State private var isAddingFavItem = false
+    @State private var selection: FavItem?
+    @State private var newItem = FavItem()
+    
+    @Environment(\.presentationMode) var presentationMode
+//    @Environment(\.dismiss) private var dismiss
+    @FocusState var focusedTask: FavItem?
+    
+    
+    
     var body: some View {
-        
-        NavigationSplitView {
-            List (selection: $selection) {
-                ForEach (favItemData.sampleData) { item in
-                    CategoryRow(favList: item)
-                        .tag(item)
-                    /*#-code-walkthrough(5.deleteEvents)*/
-                        .swipeActions {
-                            Button(role: .destructive) {
-                                selection = nil
-                                favItemData.remove(item)
-                            } label: {
-                                Label("Delete", systemImage: "trash")
+        NavigationStack {
+            List {
+                ForEach($favCategory.favItems) { $item in
+                    NavigationLink(destination: FavDetailView(favItem: $item)) {
+                        
+                        VStack (alignment: .leading) {
+                            Text("\(item.title)")
+                                .fontWeight(.bold)
+                                .font(.system(size: 18))
+                                .padding(.bottom, 0.2)
+                            
+                            Text("\(String(format: "%0.1f", item.rate))")
+                        }
+                        .sheet (isPresented: $isShowingDetail) {
+                            NavigationStack {
+                                FavDetailView(favItem: $item)
                             }
                         }
+                    }
+                    
                 }
                 
             }
-            .navigationTitle("Category")
+            .navigationTitle(Text("\(favCategory.label)"))
             .toolbar {
                 ToolbarItem {
                     Button {
-                        newCategory = FavCategory()
-                        isAddingCategory = true
+                        newItem = FavItem()
+                        isAddingFavItem = true
                     } label: {
                         Image(systemName: "plus")
                     }
                 }
             }
-            .sheet(isPresented: $isAddingCategory) {
-                NavigationStack {
-                    CategoryModifier(favCategory: $newCategory, isNew: true)
-                        .toolbar {
-                           ToolbarItem(placement: .cancellationAction) {
-                               Button("Cancel") {
-                                   isAddingCategory = false
-                               }
-                           }
-                           ToolbarItem {
-                               Button {
-                                   favItemData.add(newCategory)
-                                   isAddingCategory = false
-                               } label: {
-                                   Text("Add")
-                               }
-                               .disabled(newCategory.label.isEmpty)
-                           }
+            .sheet(isPresented: $isAddingFavItem) {
+                FavItemModifier(favItem: $newItem, isNew: true)
+                    .toolbar {
+                        ToolbarItem (placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isAddingFavItem = false
+                            }
                         }
-                }
-            }
-        } detail: {
-            ZStack {
-                if let item = selection, let itemBinding = favItemData.getBindingToData(item) {
-                    CategoryModifier(favCategory: itemBinding)
-                } else {
-                    Text("Select a Category")
-                        .foregroundStyle(.secondary)
-                }
+                        ToolbarItem {
+                            Button {
+                                var parent = favItemData.getBindingToData(favCategory)?.favItems
+                                
+                                isAddingFavItem = false
+                            } label: {
+                                Text("Add")
+                            }
+//                            .disabled(newItem.isEmpty)
+                        }
+                    }
             }
         }
     }
-
 }
 
-
-
-struct ContentView_Previews: PreviewProvider {
+struct FavListView_Previews: PreviewProvider {
     static var previews: some View {
-        FavListView(favItemData: FavSampleData()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        FavListView(favItemData: FavSampleData(), favCategory: .constant(FavCategory())).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

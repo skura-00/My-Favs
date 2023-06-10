@@ -21,8 +21,11 @@ struct CategoryRow: View {
                 Image(systemName: favList.icon)
                     .padding(.trailing, 10)
             }
-            
-        }.badge(favList.favItems.count)
+            .padding(10)
+        }
+        .badge(favList.favItems.count)
+//        .border(Color.black, width: 1)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
         
         
     }

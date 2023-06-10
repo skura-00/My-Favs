@@ -14,7 +14,7 @@ struct My_Fevs_App: App {
 
     var body: some Scene {
         WindowGroup {
-            FavListView(favItemData: sampleData)
+            FavCategoryView(favItemData: sampleData)
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 
         }
