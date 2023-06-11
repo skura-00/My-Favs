@@ -58,7 +58,12 @@ class FavSampleData: ObservableObject {
         sampleData.append(item)
     }
     
-    func addItem(_ item: FavItem) {
+    func addItem(_ item: FavItem, category: inout FavCategory) {
+        for cate in sampleData {
+            if cate.id == category.id {
+                category.favItems.append(item)
+            }
+        }
     }
         
     func remove(_ item: FavCategory) {

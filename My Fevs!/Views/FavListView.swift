@@ -67,13 +67,12 @@ struct FavListView: View {
                         }
                         ToolbarItem {
                             Button {
-                                var parent = favItemData.getBindingToData(favCategory)?.favItems
-                                
+                                favItemData.addItem(newItem, category: &favCategory)
                                 isAddingFavItem = false
                             } label: {
                                 Text("Add")
                             }
-//                            .disabled(newItem.isEmpty)
+                            .disabled(newItem.title.isEmpty)
                         }
                     }
             }

@@ -11,13 +11,23 @@ struct FavDetailView: View {
     @Binding var favItem: FavItem
     
     var body: some View {
-        VStack {
-            Text("\(favItem.title)")
-                .fontWeight(.bold)
-                .font(.system(size: 30))
-            Text("\(String(format: "%0.1f", favItem.rate))")
+        VStack (alignment: .leading, spacing: 10) {
+                
+                Text("\(String(format: "%0.1f", favItem.rate))")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.leading)
+                
+                Text("\(favItem.desc))")
+                    .lineLimit(10)
+                    .multilineTextAlignment(.leading)
+            
+                Spacer()
+            
         }
-        .ignoresSafeArea(.all)
+        .frame(alignment: .topLeading)
+        .navigationTitle(favItem.title)
+            
     }
 }
 
