@@ -1,0 +1,5 @@
+
+Improvements:
+- Rating stars: Stars Image
+- FavItem: Add Image
+

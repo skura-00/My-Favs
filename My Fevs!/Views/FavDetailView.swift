@@ -7,28 +7,36 @@
 
 import SwiftUI
 
+
 struct FavDetailView: View {
     @Binding var favItem: FavItem
+    var maxStar = 10
     
     var body: some View {
         VStack (alignment: .leading, spacing: 10) {
+            
+            Text("\(String(format: "%0.1f", favItem.rate))")
+                .font(.title2)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.leading)
+                .padding(.vertical)
+            
                 
-                Text("\(String(format: "%0.1f", favItem.rate))")
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.leading)
-                
-                Text("\(favItem.desc))")
+            Text("\(favItem.desc)")
+                .font(.body)
                     .lineLimit(10)
                     .multilineTextAlignment(.leading)
             
                 Spacer()
             
         }
-        .frame(alignment: .topLeading)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .padding(.horizontal, 20)
         .navigationTitle(favItem.title)
             
     }
+    
+    
 }
 
 struct FavDetailView_Previews: PreviewProvider {

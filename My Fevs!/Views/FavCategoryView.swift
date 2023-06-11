@@ -46,23 +46,25 @@ struct FavCategoryView: View {
                 }
             }
             .sheet(isPresented: $isAddingCategory) {
-                CategoryModifier(favCategory: $newCategory, isNew: true)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
-                                isAddingCategory = false
+                NavigationStack {
+                    CategoryModifier(favCategory: $newCategory, isNew: true)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel") {
+                                    isAddingCategory = false
+                                }
+                            }
+                            ToolbarItem {
+                                Button {
+                                    favItemData.add(newCategory)
+                                    isAddingCategory = false
+                                } label: {
+                                    Text("Add")
+                                }
+                                .disabled(newCategory.label.isEmpty)
                             }
                         }
-                        ToolbarItem {
-                            Button {
-                                favItemData.add(newCategory)
-                                isAddingCategory = false
-                            } label: {
-                                Text("Add")
-                            }
-                            .disabled(newCategory.label.isEmpty)
-                        }
-                    }
+                }
             }
             
         } detail: {

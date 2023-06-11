@@ -9,11 +9,11 @@ import SwiftUI
 
 struct FavItem: Identifiable, Hashable, Codable {
     var id = UUID()
-    var title: String = "Sample Item"
+    var title: String = String()
     var rate: Double = 0
-    var desc: String = "This movie is great!"
+    var desc: String = String()
     
-    static var example = FavItem(title: "鬼滅の刃", rate: 4.8, desc: "I love this Anime!")
+    static var example = FavItem(title: "鬼滅の刃", rate: 4.4, desc: "I love this Anime!")
     
     static var delete = FavItem()
 }

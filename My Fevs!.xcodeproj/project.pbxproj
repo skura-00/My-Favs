@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB13C7542A366DAD005976B9 /* Note.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB13C7532A366DAD005976B9 /* Note.txt */; };
 		BBE2BEB92A31942300564536 /* My_Fevs_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEB82A31942300564536 /* My_Fevs_App.swift */; };
 		BBE2BEBB2A31942300564536 /* FavCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEBA2A31942300564536 /* FavCategoryView.swift */; };
 		BBE2BEBD2A31942400564536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE2BEBC2A31942400564536 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB13C7532A366DAD005976B9 /* Note.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Note.txt; sourceTree = "<group>"; };
 		BBE2BEB52A31942300564536 /* My Fevs!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Fevs!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2BEB82A31942300564536 /* My_Fevs_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Fevs_App.swift; sourceTree = "<group>"; };
 		BBE2BEBA2A31942300564536 /* FavCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategoryView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				BBE2BEC12A31942400564536 /* Persistence.swift */,
 				BBE2BEC32A31942400564536 /* My_Fevs_.xcdatamodeld */,
 				BBE2BEBE2A31942400564536 /* Preview Content */,
+				BB13C7532A366DAD005976B9 /* Note.txt */,
 			);
 			path = "My Fevs!";
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				BBE2BEC02A31942400564536 /* Preview Assets.xcassets in Resources */,
 				BBE2BEBD2A31942400564536 /* Assets.xcassets in Resources */,
+				BB13C7542A366DAD005976B9 /* Note.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

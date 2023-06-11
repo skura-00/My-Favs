@@ -58,23 +58,25 @@ struct FavListView: View {
                 }
             }
             .sheet(isPresented: $isAddingFavItem) {
-                FavItemModifier(favItem: $newItem, isNew: true)
-                    .toolbar {
-                        ToolbarItem (placement: .cancellationAction) {
-                            Button("Cancel") {
-                                isAddingFavItem = false
+                NavigationStack {
+                    FavItemModifier(favItem: $newItem, isNew: true)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel") {
+                                    isAddingFavItem = false
+                                }
+                            }
+                            ToolbarItem {
+                                Button {
+                                    favItemData.addItem(newItem, category: &favCategory)
+                                    isAddingFavItem = false
+                                } label: {
+                                    Text("Add")
+                                }
+                                .disabled(newItem.title.isEmpty)
                             }
                         }
-                        ToolbarItem {
-                            Button {
-                                favItemData.addItem(newItem, category: &favCategory)
-                                isAddingFavItem = false
-                            } label: {
-                                Text("Add")
-                            }
-                            .disabled(newItem.title.isEmpty)
-                        }
-                    }
+                }
             }
         }
     }

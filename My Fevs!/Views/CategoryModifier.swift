@@ -13,7 +13,6 @@ struct CategoryModifier: View {
     @State private var selection: FavCategory?
     
     @Environment(\.presentationMode) var presentationMode
-    @FocusState var focusedTask: FavItem?
     @State private var isPickingIcon = false
 
     var body: some View {

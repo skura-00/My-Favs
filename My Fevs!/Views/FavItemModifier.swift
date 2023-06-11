@@ -17,6 +17,8 @@ struct FavItemModifier: View {
     @Environment(\.presentationMode) var presentationMode
     @FocusState var focusedTask: FavItem?
     @State private var isPickingIcon = false
+    @State private var isSliding = false
+    @State private var isAddingFavItem = false
     
     var body: some View {
         NavigationView {
@@ -26,30 +28,30 @@ struct FavItemModifier: View {
                         .font(.title2)
                         .padding(5)
                 }
-                Section (header: Text("Rate & Description")) {
-                    TextField("Rate", value: $favItem.rate, format: .number)
-                        .keyboardType(.numberPad)
-                        .font(.title2)
-                        .padding(5)
+                Section (header: Text("Rate")) {
+                    
+                    Slider(
+                        value: $favItem.rate,
+                        in: 0...10,
+                        onEditingChanged: { sliding in
+                            isSliding = sliding
+                        }
+                    )
+                    
+                    Text("\(String(format: "%0.1f", favItem.rate))")
+                    
+                }
                 
+                Section (header: Text("Description")) {
                     TextField("Description", text: $favItem.desc)
                         .font(.title2)
                         .padding(5)
                         .frame(height: 300, alignment: .topLeading)
                     
                 }
-                Section (header: Text("")) {
-                    Button("Add") {
-                        
-                    }
-                }
             }
             
         }
-        
-            
-//            TextField("Title", text: $favItem.title)
-//                .font(.title2)
     }
         
     
