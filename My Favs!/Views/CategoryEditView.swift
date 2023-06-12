@@ -26,6 +26,9 @@ struct CategoryEditView: View {
                     .font(.title2)
             }
         }
+        .sheet(isPresented: $isPickingIcon) {
+            IconPickerView(category: $favCategory)
+        }
     }
 }
 
