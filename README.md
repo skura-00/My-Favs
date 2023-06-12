@@ -2,4 +2,4 @@
 
 
 ### Reference
-- Playgounds <Date Planner>
+- Playgounds: Date Planner
