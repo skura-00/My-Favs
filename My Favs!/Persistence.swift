@@ -1,6 +1,6 @@
 //
 //  Persistence.swift
-//  My Fevs!
+//  My Favs!
 //
 //  Created by Sachi Kurata on 2023/06/07.
 //

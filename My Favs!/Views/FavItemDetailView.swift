@@ -1,6 +1,6 @@
 //
-//  FavDetailView.swift
-//  My Fevs!
+//  FavItemDetailView.swift
+//  My Favs!
 //
 //  Created by Sachi Kurata on 2023/06/08.
 //

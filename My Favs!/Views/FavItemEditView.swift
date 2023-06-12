@@ -2,7 +2,7 @@
 //  FavItemEditView.swift
 //  My Favs!
 //
-//  Created by 倉田沙智 on 2023/06/12.
+//  Created by Sachi Kurata on 2023/06/12.
 //
 
 import SwiftUI

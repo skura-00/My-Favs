@@ -1,6 +1,6 @@
 //
-//  FavListView.swift
-//  My Fevs!
+//  ItemListView.swift
+//  My Favs!
 //
 //  Created by Sachi Kurata on 2023/06/08.
 //

@@ -1,6 +1,6 @@
 //
-//  FavListIcons.swift
-//  My Fevs!
+//  FavCategoryIcons.swift
+//  My Favs!
 //
 //  Created by Sachi Kurata on 2023/06/08.
 //

@@ -1,6 +1,6 @@
 //
-//  ContentView.swift
-//  My Fevs!
+//  CategoryListView.swift
+//  My Favs!
 //
 //  Created by Sachi Kurata on 2023/06/07.
 //
