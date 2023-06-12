@@ -9,8 +9,6 @@ import SwiftUI
 
 struct FavItemListView: View {
     @Binding var favCategory: FavCategory
-    @State private var isShowingDetail = false
-    @State private var isAddingFavItem = false
     @State private var selection: FavItem?
     
     @State private var isPresentingNewItemView = false
@@ -51,7 +49,7 @@ struct FavItemListView: View {
                     .accessibilityLabel("New Item")
                 }
             }
-            .sheet(isPresented: $isAddingFavItem) {
+            .sheet(isPresented: $isPresentingNewItemView ) {
                 NewFavItemSheet(category: $favCategory, isPresentingNewItemView: $isPresentingNewItemView)
             }
         }

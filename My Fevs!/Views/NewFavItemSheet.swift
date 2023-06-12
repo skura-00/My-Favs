@@ -24,7 +24,7 @@ struct NewFavItemSheet: View {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
                             category.favItems.append(newItem)
-                            isPresentingNewItemView = true
+                            isPresentingNewItemView = false
                         }
                     }
                 }

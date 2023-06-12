@@ -13,8 +13,8 @@ struct FavCategoriesView: View {
     @Binding var favCategoryData: [FavCategory]
     /*#-code-walkthrough(5.eventData)*/
     @State private var isPresentingNewCategoryView = false
-    @State var selection = false
-
+    @State private var selection: FavCategory?
+    
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: ()->Void
     
@@ -23,7 +23,20 @@ struct FavCategoriesView: View {
             List ($favCategoryData) { $category in
                 NavigationLink(destination: FavItemListView(favCategory: $category)) {
                     CategoryRow(favList: category)
-                        
+                        .swipeActions {
+                            Button(action: {
+                                selection = nil
+                                var index = 0
+                                for cat in favCategoryData {
+                                    if cat.id == category.id {
+                                        favCategoryData.remove(at: index)
+                                    }
+                                    index += 1
+                                }
+                            }) {
+                                Image(systemName: "trash")
+                            }
+                        }
                 }
             }
             .navigationTitle("Category")

@@ -20,11 +20,9 @@ struct FavItem: Identifiable, Hashable, Codable {
         self.desc = desc
     }
 
-    
     static var emptyItem: FavItem {
         FavItem(title: String(), rate: 0.0, desc: "")
     }
-//    static var delete = FavItem(from: <#Decoder#>)
     
 }
 
