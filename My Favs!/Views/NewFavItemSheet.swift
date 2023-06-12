@@ -8,27 +8,55 @@
 import SwiftUI
 
 struct NewFavItemSheet: View {
-    @State private var newItem = FavItem.emptyItem
     @Binding var category: FavCategory
     @Binding var isPresentingNewItemView: Bool
+    @State private var newItem = FavItem.emptyItem
+    @State private var isSliding = false
     
     var body: some View {
-        NavigationStack {
-            FavItemEditView(favItem: $newItem)
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") {
-                            isPresentingNewItemView = false
+        NavigationView {
+            List {
+                Section(header: Text("Title")) {
+                    TextField("Title", text: $newItem.title)
+                        .font(.title2)
+                        .padding(5)
+                }
+                Section (header: Text("Rate")) {
+                    Slider(
+                        value: $newItem.rate,
+                        in: 0...10,
+                        onEditingChanged: { sliding in
+                            isSliding = sliding
                         }
-                    }
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Add") {
-                            category.favItems.append(newItem)
-                            isPresentingNewItemView = false
-                        }
+                    )
+                    
+                    Text("\(String(format: "%0.1f", newItem.rate))")
+                    
+                }
+                
+                Section (header: Text("Description")) {
+                    TextField("Description", text: $newItem.desc)
+                        .font(.title2)
+                        .padding(5)
+                        .frame(height: 300, alignment: .topLeading)
+                    
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        isPresentingNewItemView = false
                     }
                 }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add") {
+                        category.favItems.append(newItem)
+                        isPresentingNewItemView = false
+                    }
+                }
+            }
         }
+        
     }
 }
 

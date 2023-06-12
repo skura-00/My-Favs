@@ -9,12 +9,12 @@ import SwiftUI
 
 struct FavCategory: Identifiable, Hashable, Codable {
     var id: UUID
-    var icon: String
-    var color: Color
+    var icon: String = FavCategoryIcons.iconName()
+    var color: RGBAColor = FavCategoryColors.getColor().rgbaColor
     var label: String
     var favItems: [FavItem]
     
-    init(id: UUID = UUID(), icon: String, color: Color, label: String, favItems: [FavItem]) {
+    init(id: UUID = UUID(), icon: String, color: RGBAColor, label: String, favItems: [FavItem]) {
         self.id = id
         self.icon = icon
         self.color = color
@@ -23,7 +23,7 @@ struct FavCategory: Identifiable, Hashable, Codable {
     }
     
     static var emptyCategory: FavCategory {
-        FavCategory(icon: FavCategoryIcons.iconName(), color: Color.accentColor, label: String(), favItems: [])
+        FavCategory(icon: FavCategoryIcons.iconName(), color: FavCategoryColors.getColor().rgbaColor, label: String(), favItems: [])
     }
     
     mutating func remove(_ item: FavItem) {
@@ -45,7 +45,7 @@ extension FavCategory {
     static let sampleData: [FavCategory] = [
         FavCategory(
             icon: "film.fill",
-            color: Color.accentColor,
+            color:  FavCategoryColors.getColor().rgbaColor,
             label: "Movie",
             favItems: [
                 FavItem(title: "となりのトトロ", rate: 4, desc: "Movie")
@@ -53,7 +53,7 @@ extension FavCategory {
         ),
         FavCategory(
             icon: "theatermasks.fill",
-            color: Color.black,
+            color:  FavCategoryColors.getColor().rgbaColor,
             label: "TV Show",
             favItems: [
                 FavItem(title: "Station 19", rate: 10, desc: "TV Show"),

@@ -22,7 +22,7 @@ struct FavCategoriesView: View {
         NavigationStack {
             List ($favCategoryData) { $category in
                 NavigationLink(destination: FavItemListView(favCategory: $category)) {
-                    CategoryRow(favList: category)
+                    CategoryRow(category: category)
                         .swipeActions {
                             Button(action: {
                                 selection = nil
@@ -47,6 +47,7 @@ struct FavCategoriesView: View {
                     }) {
                         Image(systemName: "plus")
                     }
+                    .accessibilityLabel("New Item")
                 }
             }
             .sheet(isPresented: $isPresentingNewCategoryView) {

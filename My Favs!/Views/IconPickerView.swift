@@ -9,33 +9,51 @@ import SwiftUI
 
 struct IconPickerView: View {
     @Binding var category: FavCategory
+    @State private var selectedColor: Color = FavCategoryColors.default
+    @State private var selectedIcon: String = FavCategoryIcons.iconName()
     
     var column = Array(repeating: GridItem(.flexible()), count: 5)
     
     var body: some View {
-        VStack (alignment: .center) {
-            Image(systemName: category.icon)
-                .font(.title)
+        VStack {
+            Image(systemName: selectedIcon)
+                .font(.title3)
                 .imageScale(.large)
-                .foregroundColor(category.color)
+                .foregroundColor(selectedColor)
+                .padding(.vertical)
             
-            ColorPicker("", selection: $category.color, supportsOpacity: false)
-                .padding()
+            Divider()
+            
+            HStack {
+                ForEach(FavCategoryColors.all, id: \.self) { color in
+                    Button {
+                        selectedColor = color
+                        category.color = color.rgbaColor
+                    } label: {
+                        Circle()
+                            .foregroundColor(color)
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .frame(height: 50)
             
             LazyVGrid(columns: column) {
                 ForEach(FavCategoryIcons.iconNames, id: \.self) { icon in
                     Button (action: {
+                        selectedIcon = icon
                         category.icon = icon
                     }) {
                         Image(systemName: icon)
-                            .font(.title2)
+                            .font(.title3)
                             .imageScale(.large)
-                            .foregroundColor(category.color)
-                            .padding()
+                            .foregroundColor(selectedColor)
+                            .padding(5)
                     }
                     
                 }
-            }.frame(maxWidth: .infinity)
+            }
+            .frame(maxHeight: .infinity)
         }
     }
 }

@@ -12,22 +12,26 @@ struct CategoryEditView: View {
     @State private var isPickingIcon = false
     
     var body: some View {
-        List {
-            HStack {
+        VStack {
+            List {
                 Button {
                     isPickingIcon.toggle()
                 } label: {
                     Image(systemName: favCategory.icon)
-                        .imageScale(.large)                }
+                        .foregroundColor(Color(favCategory.color))
+                        .imageScale(.large)
+                        .font(.title3)
+                }
                 .buttonStyle(.plain)
-                .padding(.horizontal, 5)
+                .padding(.vertical, 5)
+                .frame(alignment: .center)
                 
                 TextField("New Category", text: $favCategory.label)
                     .font(.title2)
             }
-        }
-        .sheet(isPresented: $isPickingIcon) {
-            IconPickerView(category: $favCategory)
+            .sheet(isPresented: $isPickingIcon) {
+                IconPickerView(category: $favCategory)
+            }
         }
     }
 }

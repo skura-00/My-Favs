@@ -13,6 +13,7 @@ struct FavItemListView: View {
     
     @State private var isPresentingNewItemView = false
     @FocusState var focusedTask: FavItem?
+    @State private var newItem = FavItem.emptyItem
     
     var body: some View {
         NavigationStack {
@@ -49,7 +50,7 @@ struct FavItemListView: View {
                     .accessibilityLabel("New Item")
                 }
             }
-            .sheet(isPresented: $isPresentingNewItemView ) {
+            .sheet(isPresented: $isPresentingNewItemView) {
                 NewFavItemSheet(category: $favCategory, isPresentingNewItemView: $isPresentingNewItemView)
             }
         }

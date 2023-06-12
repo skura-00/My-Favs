@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct CategoryRow: View {
-    let favList: FavCategory
+    let category: FavCategory
     
     var body: some View {
         HStack {
             Label {
                 VStack {
-                    Text(favList.label)
+                    Text(category.label)
                         .fontWeight(.bold)
                 }
             } icon: {
-                Image(systemName: favList.icon)
+                Image(systemName: category.icon)
+                    .foregroundColor(Color(category.color))
                     .padding(.trailing, 10)
             }
             .padding(10)
         }
-        .badge(favList.favItems.count)
+        .badge(category.favItems.count)
         
         
     }
@@ -32,6 +33,6 @@ struct CategoryRow: View {
 
 struct EventRow_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryRow(favList: FavCategory.sampleData[0])
+        CategoryRow(category: FavCategory.sampleData[0])
     }
 }

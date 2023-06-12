@@ -13,7 +13,7 @@ struct FavDetailView: View {
     var maxStar = 10
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 10) {
+        VStack (alignment: .leading) {
             
             Text("\(String(format: "%0.1f", favItem.rate))")
                 .font(.title2)
