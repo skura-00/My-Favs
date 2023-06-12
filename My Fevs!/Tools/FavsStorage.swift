@@ -2,7 +2,7 @@
 //  FavsStorage.swift
 //  My Fevs!
 //
-//  Created by 倉田沙智 on 2023/06/11.
+//  Created by Sachi Kurata on 2023/06/11.
 //
 
 import SwiftUI

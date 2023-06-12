@@ -2,7 +2,7 @@
 //  FavSampleData.swift
 //  My Fevs!
 //
-//  Created by 倉田沙智 on 2023/06/07.
+//  Created by Sachi Kurata on 2023/06/07.
 //
 
 import SwiftUI

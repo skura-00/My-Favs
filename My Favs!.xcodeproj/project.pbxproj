@@ -35,7 +35,7 @@
 		BB13C7592A368A84005976B9 /* FavsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsStorage.swift; sourceTree = "<group>"; };
 		BB13C75D2A369B7B005976B9 /* CategoryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditView.swift; sourceTree = "<group>"; };
 		BB13C7612A36A847005976B9 /* NewFavItemSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFavItemSheet.swift; sourceTree = "<group>"; };
-		BBE2BEB52A31942300564536 /* My Fevs!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Fevs!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE2BEB52A31942300564536 /* My Favs!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Favs!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2BEB82A31942300564536 /* My_Fevs_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Fevs_App.swift; sourceTree = "<group>"; };
 		BBE2BEBA2A31942300564536 /* FavCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategoriesView.swift; sourceTree = "<group>"; };
 		BBE2BEBC2A31942400564536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		BBE2BEB62A31942300564536 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BBE2BEB52A31942300564536 /* My Fevs!.app */,
+				BBE2BEB52A31942300564536 /* My Favs!.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,9 +142,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BBE2BEB42A31942300564536 /* My Fevs! */ = {
+		BBE2BEB42A31942300564536 /* My Favs! */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBE2BEC82A31942400564536 /* Build configuration list for PBXNativeTarget "My Fevs!" */;
+			buildConfigurationList = BBE2BEC82A31942400564536 /* Build configuration list for PBXNativeTarget "My Favs!" */;
 			buildPhases = (
 				BBE2BEB12A31942300564536 /* Sources */,
 				BBE2BEB22A31942300564536 /* Frameworks */,
@@ -154,9 +154,9 @@
 			);
 			dependencies = (
 			);
-			name = "My Fevs!";
+			name = "My Favs!";
 			productName = "My Fevs!";
-			productReference = BBE2BEB52A31942300564536 /* My Fevs!.app */;
+			productReference = BBE2BEB52A31942300564536 /* My Favs!.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BBE2BEB02A31942300564536 /* Build configuration list for PBXProject "My Fevs!" */;
+			buildConfigurationList = BBE2BEB02A31942300564536 /* Build configuration list for PBXProject "My Favs!" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -187,7 +187,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BBE2BEB42A31942300564536 /* My Fevs! */,
+				BBE2BEB42A31942300564536 /* My Favs! */,
 			);
 		};
 /* End PBXProject section */
@@ -406,7 +406,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BBE2BEB02A31942300564536 /* Build configuration list for PBXProject "My Fevs!" */ = {
+		BBE2BEB02A31942300564536 /* Build configuration list for PBXProject "My Favs!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBE2BEC62A31942400564536 /* Debug */,
@@ -415,7 +415,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BBE2BEC82A31942400564536 /* Build configuration list for PBXNativeTarget "My Fevs!" */ = {
+		BBE2BEC82A31942400564536 /* Build configuration list for PBXNativeTarget "My Favs!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBE2BEC92A31942400564536 /* Debug */,

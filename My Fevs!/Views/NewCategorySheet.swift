@@ -2,7 +2,7 @@
 //  FavlistModifier.swift
 //  My Fevs!
 //
-//  Created by 倉田沙智 on 2023/06/08.
+//  Created by Sachi Kurata on 2023/06/08.
 //
 import SwiftUI
 
