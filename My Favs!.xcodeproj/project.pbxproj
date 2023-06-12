@@ -12,12 +12,12 @@
 		BB13C75A2A368A84005976B9 /* FavsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7592A368A84005976B9 /* FavsStorage.swift */; };
 		BB13C75E2A369B7B005976B9 /* CategoryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C75D2A369B7B005976B9 /* CategoryEditView.swift */; };
 		BB13C7622A36A847005976B9 /* NewFavItemSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7612A36A847005976B9 /* NewFavItemSheet.swift */; };
-		BBE2BEB92A31942300564536 /* My_Fevs_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEB82A31942300564536 /* My_Fevs_App.swift */; };
+		BBE2BEB92A31942300564536 /* My_Favs_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEB82A31942300564536 /* My_Favs_App.swift */; };
 		BBE2BEBB2A31942300564536 /* FavCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEBA2A31942300564536 /* FavCategoriesView.swift */; };
 		BBE2BEBD2A31942400564536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE2BEBC2A31942400564536 /* Assets.xcassets */; };
 		BBE2BEC02A31942400564536 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE2BEBF2A31942400564536 /* Preview Assets.xcassets */; };
 		BBE2BEC22A31942400564536 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEC12A31942400564536 /* Persistence.swift */; };
-		BBE2BEC52A31942400564536 /* My_Fevs_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEC32A31942400564536 /* My_Fevs_.xcdatamodeld */; };
+		BBE2BEC52A31942400564536 /* My_Favs_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEC32A31942400564536 /* My_Favs_.xcdatamodeld */; };
 		BBE2BECC2A31ADD500564536 /* FavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BECB2A31ADD500564536 /* FavItem.swift */; };
 		BBE2BECE2A31B03300564536 /* FavCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BECD2A31B03300564536 /* FavCategory.swift */; };
 		BBE2BED02A31B14D00564536 /* FavSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BECF2A31B14D00564536 /* FavSampleData.swift */; };
@@ -36,7 +36,7 @@
 		BB13C75D2A369B7B005976B9 /* CategoryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditView.swift; sourceTree = "<group>"; };
 		BB13C7612A36A847005976B9 /* NewFavItemSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFavItemSheet.swift; sourceTree = "<group>"; };
 		BBE2BEB52A31942300564536 /* My Favs!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Favs!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBE2BEB82A31942300564536 /* My_Fevs_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Fevs_App.swift; sourceTree = "<group>"; };
+		BBE2BEB82A31942300564536 /* My_Favs_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Favs_App.swift; sourceTree = "<group>"; };
 		BBE2BEBA2A31942300564536 /* FavCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategoriesView.swift; sourceTree = "<group>"; };
 		BBE2BEBC2A31942400564536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBE2BEBF2A31942400564536 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		BBE2BEAC2A31942300564536 = {
 			isa = PBXGroup;
 			children = (
-				BBE2BEB72A31942300564536 /* My Fevs! */,
+				BBE2BEB72A31942300564536 /* My Favs! */,
 				BBE2BEB62A31942300564536 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,20 +80,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBE2BEB72A31942300564536 /* My Fevs! */ = {
+		BBE2BEB72A31942300564536 /* My Favs! */ = {
 			isa = PBXGroup;
 			children = (
 				BBE2BED32A31B5D600564536 /* Views */,
 				BBE2BED22A31B5B400564536 /* Tools */,
 				BBE2BED12A31B3C700564536 /* Models */,
-				BBE2BEB82A31942300564536 /* My_Fevs_App.swift */,
+				BBE2BEB82A31942300564536 /* My_Favs_App.swift */,
 				BBE2BEBC2A31942400564536 /* Assets.xcassets */,
 				BBE2BEC12A31942400564536 /* Persistence.swift */,
-				BBE2BEC32A31942400564536 /* My_Fevs_.xcdatamodeld */,
+				BBE2BEC32A31942400564536 /* My_Favs_.xcdatamodeld */,
 				BBE2BEBE2A31942400564536 /* Preview Content */,
 				BB13C7532A366DAD005976B9 /* Note.txt */,
 			);
-			path = "My Fevs!";
+			path = "My Favs!";
 			sourceTree = "<group>";
 		};
 		BBE2BEBE2A31942400564536 /* Preview Content */ = {
@@ -213,12 +213,12 @@
 				BB13C7622A36A847005976B9 /* NewFavItemSheet.swift in Sources */,
 				BB13C75E2A369B7B005976B9 /* CategoryEditView.swift in Sources */,
 				BBE2BEC22A31942400564536 /* Persistence.swift in Sources */,
-				BBE2BEC52A31942400564536 /* My_Fevs_.xcdatamodeld in Sources */,
+				BBE2BEC52A31942400564536 /* My_Favs_.xcdatamodeld in Sources */,
 				BBE2BED02A31B14D00564536 /* FavSampleData.swift in Sources */,
 				BBE2BEBB2A31942300564536 /* FavCategoriesView.swift in Sources */,
 				BBE2BED72A31C0F600564536 /* FavCategoryIcons.swift in Sources */,
 				BBE2BEE72A339F1B00564536 /* FavItemEditView.swift in Sources */,
-				BBE2BEB92A31942300564536 /* My_Fevs_App.swift in Sources */,
+				BBE2BEB92A31942300564536 /* My_Favs_App.swift in Sources */,
 				BBE2BEE12A32501400564536 /* FavItemListView.swift in Sources */,
 				BBE2BEDB2A31CCF300564536 /* NewCategorySheet.swift in Sources */,
 				BB13C7582A368573005976B9 /* FavItemRow.swift in Sources */,
@@ -427,13 +427,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BBE2BEC32A31942400564536 /* My_Fevs_.xcdatamodeld */ = {
+		BBE2BEC32A31942400564536 /* My_Favs_.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				BBE2BEC42A31942400564536 /* My_Fevs_.xcdatamodel */,
 			);
 			currentVersion = BBE2BEC42A31942400564536 /* My_Fevs_.xcdatamodel */;
-			path = My_Fevs_.xcdatamodeld;
+			path = My_Favs_.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

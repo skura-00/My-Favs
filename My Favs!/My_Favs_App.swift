@@ -1,6 +1,6 @@
 //
-//  My_Fevs_App.swift
-//  My Fevs!
+//  My_Favs_App.swift
+//  My Favs!
 //
 //  Created by Sachi Kurata on 2023/06/07.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct My_Fevs_App: App {
+struct My_Favs_App: App {
     @StateObject private var dataStorage = FavsStorage()
 
     var body: some Scene {
