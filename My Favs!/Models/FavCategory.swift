@@ -36,7 +36,6 @@ struct FavCategory: Identifiable, Hashable, Codable {
         }
     }
     
-    static var delete = FavCategory(icon: "trash", label: "", favItems: [])
 }
 
 

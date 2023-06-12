@@ -28,15 +28,5 @@ struct FavItem: Identifiable, Hashable, Codable {
 
 extension FavItem {
     static let sampleData: [FavItem] = [
-        FavItem(
-            title: "Movie1",
-            rate: 9.5,
-            desc: "This movie is awsome! You should watch this movie."
-        ),
-        FavItem(
-            title: "Movie2",
-            rate: 2.5,
-            desc: "This movie is awsome! You should watch this movie."
-        )
     ]
 }

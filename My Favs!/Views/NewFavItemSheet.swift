@@ -14,7 +14,7 @@ struct NewFavItemSheet: View {
     
     var body: some View {
         NavigationStack {
-            FavItemEditView(favItem: newItem)
+            FavItemEditView(favItem: $newItem)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel") {

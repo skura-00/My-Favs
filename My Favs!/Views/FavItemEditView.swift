@@ -1,6 +1,6 @@
 //
 //  FavItemModifier.swift
-//  My Fevs!
+//  My Favs!
 //
 //  Created by Sachi Kurata on 2023/06/09.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavItemEditView: View {
 //    @Binding var favCategory: FavCategory
-    @State var favItem: FavItem
+    @Binding var favItem: FavItem
     @State private var selection: FavItem?
     
     @State private var isSliding = false
@@ -23,7 +23,6 @@ struct FavItemEditView: View {
                         .padding(5)
                 }
                 Section (header: Text("Rate")) {
-                    
                     Slider(
                         value: $favItem.rate,
                         in: 0...10,
@@ -47,12 +46,11 @@ struct FavItemEditView: View {
             
         }
     }
-        
     
 }
 
 struct FavItemModifier_Previews: PreviewProvider {
     static var previews: some View {
-        FavItemEditView(favItem: FavItem.sampleData[0])
+        FavItemEditView(favItem: .constant(FavItem.sampleData[0]))
     }
 }
