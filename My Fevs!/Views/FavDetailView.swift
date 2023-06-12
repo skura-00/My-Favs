@@ -41,7 +41,6 @@ struct FavDetailView: View {
 
 struct FavDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FavDetailView(favItem: .constant(FavItem()))
-            .environmentObject(FavSampleData())
+        FavDetailView(favItem: .constant(FavItem.sampleData[0]))
     }
 }

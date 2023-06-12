@@ -24,8 +24,6 @@ struct CategoryRow: View {
             .padding(10)
         }
         .badge(favList.favItems.count)
-//        .border(Color.black, width: 1)
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
         
         
     }
@@ -34,6 +32,6 @@ struct CategoryRow: View {
 
 struct EventRow_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryRow(favList: FavCategory.example)
+        CategoryRow(favList: FavCategory.sampleData[0])
     }
 }

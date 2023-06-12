@@ -8,12 +8,37 @@
 import SwiftUI
 
 struct FavItem: Identifiable, Hashable, Codable {
-    var id = UUID()
-    var title: String = String()
-    var rate: Double = 0
-    var desc: String = String()
+    var id: UUID
+    var title: String
+    var rate: Double
+    var desc: String
     
-    static var example = FavItem(title: "鬼滅の刃", rate: 4.4, desc: "I love this Anime!")
+    init(id: UUID = UUID(), title: String, rate: Double, desc: String) {
+        self.id = id
+        self.title = title
+        self.rate = rate
+        self.desc = desc
+    }
+
     
-    static var delete = FavItem()
+    static var emptyItem: FavItem {
+        FavItem(title: String(), rate: 0.0, desc: "")
+    }
+//    static var delete = FavItem(from: <#Decoder#>)
+    
+}
+
+extension FavItem {
+    static let sampleData: [FavItem] = [
+        FavItem(
+            title: "Movie1",
+            rate: 9.5,
+            desc: "This movie is awsome! You should watch this movie."
+        ),
+        FavItem(
+            title: "Movie2",
+            rate: 2.5,
+            desc: "This movie is awsome! You should watch this movie."
+        )
+    ]
 }

@@ -70,6 +70,16 @@ class FavSampleData: ObservableObject {
         sampleData.removeAll { $0.id == item.id}
     }
     
+    
+    func removeItem(_ item: FavItem, category: inout FavCategory) {
+        for cate in sampleData {
+            if cate.id == category.id {
+                category.favItems.removeAll {$0.id == item.id}
+            }
+        }
+        sampleData.removeAll { $0.id == item.id}
+    }
+    
     func getBindingToData(_ item: FavCategory) -> Binding<FavCategory>? {
         Binding<FavCategory>(
             get: {

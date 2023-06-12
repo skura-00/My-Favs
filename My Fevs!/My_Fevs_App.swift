@@ -9,14 +9,27 @@ import SwiftUI
 
 @main
 struct My_Fevs_App: App {
-    let persistenceController = PersistenceController.shared
-    @StateObject private var sampleData = FavSampleData()
+    @StateObject private var dataStorage = FavsStorage()
 
     var body: some Scene {
         WindowGroup {
-            FavCategoryView(favItemData: sampleData)
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                
+            FavCategoriesView(favCategoryData: $dataStorage.FavData) {
+                Task {
+                    do {
+                        try await dataStorage.save(FavData: dataStorage.FavData)
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .task {
+                do {
+                    try await dataStorage.load()
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+            }
         }
+        
     }
 }

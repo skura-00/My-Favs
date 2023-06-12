@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-struct FavItemModifier: View {
+struct FavItemEditView: View {
 //    @Binding var favCategory: FavCategory
-    @Binding var favItem: FavItem
-    @State var isNew = false
-    
+    @State var favItem: FavItem
     @State private var selection: FavItem?
     
-    @Environment(\.presentationMode) var presentationMode
-    @FocusState var focusedTask: FavItem?
-    @State private var isPickingIcon = false
     @State private var isSliding = false
-    @State private var isAddingFavItem = false
     
     var body: some View {
         NavigationView {
@@ -59,7 +53,6 @@ struct FavItemModifier: View {
 
 struct FavItemModifier_Previews: PreviewProvider {
     static var previews: some View {
-        FavItemModifier(favItem: .constant(FavItem()))
-            .environmentObject(FavSampleData())
+        FavItemEditView(favItem: FavItem.sampleData[0])
     }
 }
