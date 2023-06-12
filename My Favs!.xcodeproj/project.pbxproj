@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BB0008542A3793D0001677DD /* FavItemEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0008532A3793D0001677DD /* FavItemEditView.swift */; };
+		BB0008572A37B6E1001677DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB0008592A37B6E1001677DD /* Localizable.strings */; };
 		BB13C7542A366DAD005976B9 /* Note.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB13C7532A366DAD005976B9 /* Note.txt */; };
 		BB13C75A2A368A84005976B9 /* FavsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7592A368A84005976B9 /* FavsStorage.swift */; };
 		BB13C75E2A369B7B005976B9 /* CategoryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C75D2A369B7B005976B9 /* CategoryEditView.swift */; };
 		BB13C7622A36A847005976B9 /* NewFavItemSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7612A36A847005976B9 /* NewFavItemSheet.swift */; };
 		BB13C7642A36C674005976B9 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7632A36C674005976B9 /* IconPickerView.swift */; };
 		BB13C7662A36D4F5005976B9 /* FavCategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7652A36D4F5005976B9 /* FavCategoryColors.swift */; };
-		BBB674462A3700F500DF10CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BBB674452A3700F500DF10CD /* Localizable.xcstrings */; };
 		BBE2BEB92A31942300564536 /* My_Favs_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEB82A31942300564536 /* My_Favs_App.swift */; };
 		BBE2BEBB2A31942300564536 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEBA2A31942300564536 /* CategoryView.swift */; };
 		BBE2BEBD2A31942400564536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE2BEBC2A31942400564536 /* Assets.xcassets */; };
@@ -32,13 +32,13 @@
 
 /* Begin PBXFileReference section */
 		BB0008532A3793D0001677DD /* FavItemEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavItemEditView.swift; sourceTree = "<group>"; };
+		BB0008582A37B6E1001677DD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB13C7532A366DAD005976B9 /* Note.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Note.txt; sourceTree = "<group>"; };
 		BB13C7592A368A84005976B9 /* FavsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsStorage.swift; sourceTree = "<group>"; };
 		BB13C75D2A369B7B005976B9 /* CategoryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditView.swift; sourceTree = "<group>"; };
 		BB13C7612A36A847005976B9 /* NewFavItemSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFavItemSheet.swift; sourceTree = "<group>"; };
 		BB13C7632A36C674005976B9 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
 		BB13C7652A36D4F5005976B9 /* FavCategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategoryColors.swift; sourceTree = "<group>"; };
-		BBB674452A3700F500DF10CD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BBE2BEB52A31942300564536 /* My Favs!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Favs!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2BEB82A31942300564536 /* My_Favs_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Favs_App.swift; sourceTree = "<group>"; };
 		BBE2BEBA2A31942300564536 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 				BBE2BEC32A31942400564536 /* My_Favs_.xcdatamodeld */,
 				BBE2BEBE2A31942400564536 /* Preview Content */,
 				BB13C7532A366DAD005976B9 /* Note.txt */,
-				BBB674452A3700F500DF10CD /* Localizable.xcstrings */,
+				BB0008592A37B6E1001677DD /* Localizable.strings */,
 			);
 			path = "My Favs!";
 			sourceTree = "<group>";
@@ -202,8 +202,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE2BEC02A31942400564536 /* Preview Assets.xcassets in Resources */,
+				BB0008572A37B6E1001677DD /* Localizable.strings in Resources */,
 				BBE2BEBD2A31942400564536 /* Assets.xcassets in Resources */,
-				BBB674462A3700F500DF10CD /* Localizable.xcstrings in Resources */,
 				BB13C7542A366DAD005976B9 /* Note.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +236,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB0008592A37B6E1001677DD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB0008582A37B6E1001677DD /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BBE2BEC62A31942400564536 /* Debug */ = {
@@ -362,6 +373,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"My Favs!/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -393,6 +405,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"My Favs!/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  My Favs!
+
+  Created by 倉田沙智 on 2023/06/12.
+  
+*/
+
+"Title" = "タイトル";
+"Rate" = "評価";
+"Description" = "コメント";
+"Category" = "カテゴリー";
+"Cancel" = "キャンセル";
+"Add" = "追加";
+"Edit" = "編集";
+"Finish" = "完了";
+
