@@ -9,7 +9,7 @@ import SwiftUI
 //import CoreData
 
 
-struct FavCategoriesView: View {
+struct CategoryListView: View {
     @Binding var favCategoryData: [FavCategory]
     /*#-code-walkthrough(5.eventData)*/
     @State private var isPresentingNewCategoryView = false
@@ -21,25 +21,21 @@ struct FavCategoriesView: View {
     var body: some View {
         NavigationStack {
             List ($favCategoryData) { $category in
-                NavigationLink(destination: FavItemListView(favCategory: $category)) {
+                NavigationLink(destination: ItemListView(favCategory: $category)) {
                     CategoryRow(category: category)
                         .swipeActions {
                             Button(action: {
                                 selection = nil
-                                var index = 0
-                                for cat in favCategoryData {
-                                    if cat.id == category.id {
-                                        favCategoryData.remove(at: index)
-                                    }
-                                    index += 1
-                                }
+                                category.removeAll()
+                                favCategoryData.remove(at: favCategoryData.firstIndex(of: category) ?? 0)
+                                // Is this okay??
                             }) {
                                 Image(systemName: "trash")
                             }
                         }
                 }
             }
-            .navigationTitle("Category")
+            .navigationTitle(Text("Category"))
             .toolbar {
                 ToolbarItem {
                     Button(action: {
@@ -47,7 +43,7 @@ struct FavCategoriesView: View {
                     }) {
                         Image(systemName: "plus")
                     }
-                    .accessibilityLabel("New Item")
+                    .accessibilityLabel(Text("New Item"))
                 }
             }
             .sheet(isPresented: $isPresentingNewCategoryView) {
@@ -65,6 +61,6 @@ struct FavCategoriesView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        FavCategoriesView(favCategoryData: .constant(FavCategory.sampleData), saveAction: {})
+        CategoryListView(favCategoryData: .constant(FavCategory.sampleData), saveAction: {})
     }
 }

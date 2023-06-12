@@ -26,6 +26,10 @@ struct FavCategory: Identifiable, Hashable, Codable {
         FavCategory(icon: FavCategoryIcons.iconName(), color: FavCategoryColors.getColor().rgbaColor, label: String(), favItems: [])
     }
     
+    mutating func removeAll() {
+        favItems.removeAll()
+    }
+    
     mutating func remove(_ item: FavItem) {
         let id = item.id
         var index = 0
@@ -37,7 +41,6 @@ struct FavCategory: Identifiable, Hashable, Codable {
             index += 1
         }
     }
-    
 }
 
 
@@ -48,16 +51,7 @@ extension FavCategory {
             color:  FavCategoryColors.getColor().rgbaColor,
             label: "Movie",
             favItems: [
-                FavItem(title: "となりのトトロ", rate: 4, desc: "Movie")
-            ]
-        ),
-        FavCategory(
-            icon: "theatermasks.fill",
-            color:  FavCategoryColors.getColor().rgbaColor,
-            label: "TV Show",
-            favItems: [
-                FavItem(title: "Station 19", rate: 10, desc: "TV Show"),
-                FavItem(title: "Young Sheldon", rate: 6, desc: "TV Show")
+                FavItem(title: "となりのロロロ", rate: 8.5, desc: "Movie")
             ]
         )
     ]

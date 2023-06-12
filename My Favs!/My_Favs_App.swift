@@ -13,7 +13,7 @@ struct My_Favs_App: App {
 
     var body: some Scene {
         WindowGroup {
-            FavCategoriesView(favCategoryData: $dataStorage.FavData) {
+            CategoryListView(favCategoryData: $dataStorage.FavData) {
                 Task {
                     do {
                         try await dataStorage.save(FavData: dataStorage.FavData)

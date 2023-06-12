@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavItemListView: View {
+struct ItemListView: View {
     @Binding var favCategory: FavCategory
     @State private var selection: FavItem?
     
@@ -18,7 +18,7 @@ struct FavItemListView: View {
     var body: some View {
         NavigationStack {
             List ($favCategory.favItems) { $item in
-                    NavigationLink(destination: FavDetailView(favItem: $item)) {
+                    NavigationLink(destination: FavItemDetailView(favItem: $item)) {
                         
                         VStack (alignment: .leading) {
                             Text("\(item.title)")
@@ -61,6 +61,6 @@ struct FavItemListView: View {
 
 struct FavListView_Previews: PreviewProvider {
     static var previews: some View {
-        FavItemListView(favCategory: .constant(FavCategory.sampleData[0]))
+        ItemListView(favCategory: .constant(FavCategory.sampleData[0]))
     }
 }
