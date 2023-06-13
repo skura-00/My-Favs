@@ -17,10 +17,10 @@ struct IconPickerView: View {
     var body: some View {
         VStack {
             Image(systemName: selectedIcon)
-                .font(.title3)
+                .font(.title2)
                 .imageScale(.large)
                 .foregroundColor(selectedColor)
-                .padding(.vertical)
+                .padding(.vertical, 30)
             
             Divider()
             

@@ -35,6 +35,7 @@ struct CategoryListView: View {
                         }
                 }
             }
+            .foregroundColor(Color.black)
             .navigationTitle(Text("Category"))
             .toolbar {
                 ToolbarItem {
@@ -42,6 +43,7 @@ struct CategoryListView: View {
                         isPresentingNewCategoryView = true
                     }) {
                         Image(systemName: "plus")
+                            .foregroundColor(Color.orange)
                     }
                     .accessibilityLabel(Text("New Item"))
                 }
@@ -53,6 +55,8 @@ struct CategoryListView: View {
                 if phase == .inactive { saveAction() }
             }
         }
+        .foregroundColor(Color.orange)
+        .tint(Color.orange)
         
     }
     

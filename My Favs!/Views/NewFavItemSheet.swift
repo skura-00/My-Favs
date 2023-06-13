@@ -6,19 +6,21 @@
 //
 
 import SwiftUI
+import Combine
 
 struct NewFavItemSheet: View {
     @Binding var category: FavCategory
     @Binding var isPresentingNewItemView: Bool
     @State private var newItem = FavItem.emptyItem
     @State private var isSliding = false
+    let wordLimit = 250
     
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Title")) {
                     TextField("Title", text: $newItem.title)
-                        .font(.title2)
+                        .font(.title3)
                         .padding(5)
                 }
                 Section (header: Text("Rate")) {
@@ -35,13 +37,21 @@ struct NewFavItemSheet: View {
                 }
                 
                 Section (header: Text("Description")) {
-                    TextField("Description", text: $newItem.desc)
-                        .font(.title2)
-                        .padding(5)
-                        .frame(height: 300, alignment: .topLeading)
+                    TextField("Description", text: $newItem.desc, axis: .vertical)
+                        .lineLimit(1...9)
+                        .padding(5.0)
+                        .frame(maxHeight: 200, alignment: .topLeading)
+                        .onReceive(Just(newItem.desc)) { _ in
+                            if (newItem.desc.count <= wordLimit) {
+                                newItem.desc = String(newItem.desc.prefix(wordLimit))
+                            }
+                        }
                     
+                    Text("\(newItem.desc.count)/\(wordLimit)")
+                        .foregroundColor(Color.gray)
                 }
             }
+            .foregroundColor(Color.black)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -51,11 +61,13 @@ struct NewFavItemSheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
                         category.favItems.append(newItem)
+                        newItem.date = Date()
                         isPresentingNewItemView = false
                     }
                 }
             }
         }
+        .foregroundColor(Color.orange)
         
     }
 }

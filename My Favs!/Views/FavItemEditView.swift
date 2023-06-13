@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct FavItemEditView: View {
     @Binding var favItem: FavItem
     @Binding var isPresentingEditView: Bool
     @State private var isSliding = false
+    
+    private let wordLimit = 250
     
     var body: some View {
         NavigationStack {
@@ -34,13 +37,23 @@ struct FavItemEditView: View {
                 }
                 
                 Section (header: Text("Description")) {
-                    TextField("Description", text: $favItem.desc)
-                        .font(.title2)
-                        .padding(5)
-                        .frame(height: 300, alignment: .topLeading)
+                    TextField("Description", text: $favItem.desc, axis: .vertical)
+                        .lineLimit(1...9)
+                        .padding(5.0)
+                        .frame(maxHeight: 200, alignment: .topLeading)
+                        .onReceive(Just(favItem.desc)) { _ in
+                            if (favItem.desc.count <= wordLimit) {
+                                favItem.desc = String(favItem.desc.prefix(wordLimit))
+                            }
+                        }
+                    
+                    Text("\(favItem.desc.count)/\(wordLimit)")
+                        .foregroundColor(Color.gray)
+                
                     
                 }
             }
+            .foregroundColor(Color.black)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -53,7 +66,9 @@ struct FavItemEditView: View {
                     }
                 }
             }
+            
         }
+        .foregroundColor(Color.orange)
     }
 }
 

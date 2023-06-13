@@ -12,12 +12,14 @@ struct FavItem: Identifiable, Hashable, Codable {
     var title: String
     var rate: Double
     var desc: String
+    var date: Date
     
-    init(id: UUID = UUID(), title: String, rate: Double, desc: String) {
+    init(id: UUID = UUID(), title: String, rate: Double, desc: String, date: Date = Date()) {
         self.id = id
         self.title = title
         self.rate = rate
         self.desc = desc
+        self.date = date
     }
 
     static var emptyItem: FavItem {
@@ -28,5 +30,6 @@ struct FavItem: Identifiable, Hashable, Codable {
 
 extension FavItem {
     static let sampleData: [FavItem] = [
+        FavItem(title: "となりのロロロ", rate: 9.5, desc: "あなたロロロっていうの！？")
     ]
 }

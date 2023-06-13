@@ -1,5 +1,6 @@
 
 Improvements:
 - Rating stars: Stars Image
-- FavItem: Add Image
-
+- FavItem: Add Image...?
+- Sorting
+- Favorite folder

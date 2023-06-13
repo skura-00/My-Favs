@@ -51,7 +51,7 @@ extension FavCategory {
             color:  FavCategoryColors.getColor().rgbaColor,
             label: "Movie",
             favItems: [
-                FavItem(title: "となりのロロロ", rate: 8.5, desc: "Movie")
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!")
             ]
         )
     ]

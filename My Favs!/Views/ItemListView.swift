@@ -17,6 +17,7 @@ struct ItemListView: View {
     
     var body: some View {
         NavigationStack {
+            
             List ($favCategory.favItems) { $item in
                     NavigationLink(destination: FavItemDetailView(favItem: $item)) {
                         
@@ -37,6 +38,7 @@ struct ItemListView: View {
                             }
                         }
                     }
+                    .foregroundColor(Color.black)
                     
             }
             .navigationTitle(Text("\(favCategory.label)"))
@@ -54,7 +56,7 @@ struct ItemListView: View {
                 NewFavItemSheet(category: $favCategory, isPresentingNewItemView: $isPresentingNewItemView)
             }
         }
-            
+        .foregroundColor(Color.orange)
         
     }
 }

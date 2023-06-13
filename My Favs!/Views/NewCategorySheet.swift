@@ -15,6 +15,7 @@ struct NewCategorySheet: View {
     var body: some View {
         NavigationStack {
             CategoryEditView(favCategory: $newCategory)
+                .foregroundColor(Color.black)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel") {
@@ -29,6 +30,7 @@ struct NewCategorySheet: View {
                     }
                 }
         }
+        .foregroundColor(Color.orange)
         
     }
 }

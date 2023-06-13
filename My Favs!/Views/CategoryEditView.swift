@@ -33,6 +33,7 @@ struct CategoryEditView: View {
                 IconPickerView(category: $favCategory)
             }
         }
+        .foregroundColor(Color.black)
     }
 }
 
