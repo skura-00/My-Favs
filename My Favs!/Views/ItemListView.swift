@@ -41,6 +41,7 @@ struct ItemListView: View {
                     .foregroundColor(Color.black)
                     
             }
+            .listStyle(.grouped)
             .navigationTitle(Text("\(favCategory.label)"))
             .toolbar {
                 ToolbarItem {

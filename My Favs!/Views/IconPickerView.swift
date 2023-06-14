@@ -10,13 +10,12 @@ import SwiftUI
 struct IconPickerView: View {
     @Binding var category: FavCategory
     @State private var selectedColor: Color = FavCategoryColors.default
-    @State private var selectedIcon: String = FavCategoryIcons.iconName()
     
     var column = Array(repeating: GridItem(.flexible()), count: 5)
     
     var body: some View {
         VStack {
-            Image(systemName: selectedIcon)
+            Image(systemName: category.icon)
                 .font(.title2)
                 .imageScale(.large)
                 .foregroundColor(selectedColor)
@@ -41,7 +40,6 @@ struct IconPickerView: View {
             LazyVGrid(columns: column) {
                 ForEach(FavCategoryIcons.iconNames, id: \.self) { icon in
                     Button (action: {
-                        selectedIcon = icon
                         category.icon = icon
                     }) {
                         Image(systemName: icon)
@@ -54,6 +52,9 @@ struct IconPickerView: View {
                 }
             }
             .frame(maxHeight: .infinity)
+        }
+        .onAppear {
+            selectedColor = Color(category.color)
         }
     }
 }

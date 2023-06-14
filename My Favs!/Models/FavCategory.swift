@@ -53,6 +53,14 @@ extension FavCategory {
             favItems: [
                 FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!")
             ]
+        ),
+        FavCategory(
+            icon: "star.fill",
+            color:  FavCategoryColors.getColor().rgbaColor,
+            label: "Favorite",
+            favItems: [
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!")
+            ]
         )
     ]
     

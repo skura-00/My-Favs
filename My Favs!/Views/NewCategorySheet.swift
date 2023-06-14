@@ -11,7 +11,6 @@ struct NewCategorySheet: View {
     @Binding var favData: [FavCategory]
     @Binding var isPresentingNewCategoryView: Bool
     
-
     var body: some View {
         NavigationStack {
             CategoryEditView(favCategory: $newCategory)
@@ -20,18 +19,29 @@ struct NewCategorySheet: View {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel") {
                             isPresentingNewCategoryView = false
-                        }
+                        }.foregroundColor(Color.orange)
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
                             favData.append(newCategory)
                             isPresentingNewCategoryView = false
                         }
+                        .foregroundColor(addButtonColor)
+                        .disabled(labelIsEmpty)
+                        
                     }
                 }
         }
-        .foregroundColor(Color.orange)
         
+        
+    }
+    
+    var labelIsEmpty: Bool {
+        return newCategory.label.isEmpty
+    }
+    
+    var addButtonColor: Color {
+        return labelIsEmpty ? .gray : .orange
     }
 }
 

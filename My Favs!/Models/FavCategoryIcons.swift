@@ -36,7 +36,6 @@ struct FavCategoryIcons {
         "person.fill",
         "figure.walk",
         "figure.run",
-        "globe.asia.australia.fill",
         "mic.fill",
         "play.rectangle.fill",
         "circle.fill",

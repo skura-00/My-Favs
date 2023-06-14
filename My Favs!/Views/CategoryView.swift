@@ -27,14 +27,23 @@ struct CategoryListView: View {
                             Button(action: {
                                 selection = nil
                                 category.removeAll()
-                                favCategoryData.remove(at: favCategoryData.firstIndex(of: category) ?? 0)
-                                // Is this okay??
+                                favCategoryData.remove(at: favCategoryData.firstIndex(of: category) ?? 0) // ??
                             }) {
                                 Image(systemName: "trash")
                             }
                         }
                 }
+                .listRowSeparator(.hidden)
+                .listRowBackground(
+                    Rectangle()
+                        .fill(Color.white)
+                        .padding(3)
+                    
+                )
+                .padding(2)
+                
             }
+            
             .foregroundColor(Color.black)
             .navigationTitle(Text("Category"))
             .toolbar {

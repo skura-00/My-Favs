@@ -10,18 +10,19 @@ import SwiftUI
 // referenced Playgrounds <Date Planner> App/ColorOption.swift
 struct FavCategoryColors: Codable {
     static var all: [Color] = [
+        .primary,
         .red,
         .orange,
         .yellow,
         .green,
+        .mint,
         .blue,
         .purple,
+        .brown,
         .black,
-        .mint,
-        .brown
     ]
     
-    static var `default` : Color = Color.accentColor
+    static var `default` : Color = Color.primary
     
     
     static func getColor() -> Color {

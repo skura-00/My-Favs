@@ -42,7 +42,7 @@ struct NewFavItemSheet: View {
                         .padding(5.0)
                         .frame(maxHeight: 200, alignment: .topLeading)
                         .onReceive(Just(newItem.desc)) { _ in
-                            if (newItem.desc.count <= wordLimit) {
+                            if (newItem.desc.count >= wordLimit) {
                                 newItem.desc = String(newItem.desc.prefix(wordLimit))
                             }
                         }
