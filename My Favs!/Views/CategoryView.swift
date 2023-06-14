@@ -14,12 +14,24 @@ struct CategoryListView: View {
     /*#-code-walkthrough(5.eventData)*/
     @State private var isPresentingNewCategoryView = false
     @State private var selection: FavCategory?
+    @State private var sortingOption = 1
     
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: ()->Void
     
     var body: some View {
         NavigationStack {
+            HStack {
+                Picker(selection: $sortingOption, label: Text("Sort")) {
+                    Text("Sort by name").tag(1)
+                    Text("Sort by number").tag(2)
+                }
+                .padding(.horizontal)
+                .pickerStyle(.segmented)
+            }
+            .padding(2)
+            
+            
             List ($favCategoryData) { $category in
                 NavigationLink(destination: ItemListView(favCategory: $category)) {
                     CategoryRow(category: category)
