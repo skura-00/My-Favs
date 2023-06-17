@@ -4,3 +4,4 @@ Improvements:
 - FavItem: Add Image...?
 - Sorting
 - Favorite folder
+- search

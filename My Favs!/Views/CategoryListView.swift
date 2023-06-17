@@ -21,16 +21,6 @@ struct CategoryListView: View {
     
     var body: some View {
         NavigationStack {
-            HStack {
-                Picker(selection: $sortingOption, label: Text("Sort")) {
-                    Text("Sort by name").tag(1)
-                    Text("Sort by number").tag(2)
-                }
-                .padding(.horizontal)
-                .pickerStyle(.segmented)
-            }
-            .padding(2)
-            
             
             List ($favCategoryData) { $category in
                 NavigationLink(destination: ItemListView(favCategory: $category)) {
@@ -52,10 +42,9 @@ struct CategoryListView: View {
                         .padding(3)
                     
                 )
-                .padding(2)
+                .padding(8)
                 
             }
-            
             .foregroundColor(Color.black)
             .navigationTitle(Text("Category"))
             .toolbar {
@@ -75,9 +64,26 @@ struct CategoryListView: View {
             .onChange(of: scenePhase) { phase in
                 if phase == .inactive { saveAction() }
             }
+            
+            HStack {
+                Image(systemName: "tray.2")
+                    .font(.system(size: 30))
+                    .padding(.horizontal, 20)
+                
+                NavigationLink(destination: ItemSearchView()) {
+                    Image(systemName: "magnifyingglass")
+                        .font(.system(size: 30))
+                        .padding(.horizontal, 20)
+                        .foregroundColor(Color.gray)
+                }
+             
+            }
+            .padding(8)
         }
         .foregroundColor(Color.orange)
         .tint(Color.orange)
+        .navigationBarBackButtonHidden(true)
+        
         
     }
     
@@ -86,6 +92,6 @@ struct CategoryListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryListView(favCategoryData: .constant(FavCategory.sampleData), saveAction: {})
+        CategoryListView(favCategoryData: .constant(FavsStorage().FavData), saveAction: {})
     }
 }

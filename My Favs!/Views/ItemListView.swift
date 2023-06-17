@@ -14,9 +14,25 @@ struct ItemListView: View {
     @State private var isPresentingNewItemView = false
     @FocusState var focusedTask: FavItem?
     @State private var newItem = FavItem.emptyItem
+    @State private var sortingOption = 1
     
     var body: some View {
         NavigationStack {
+            
+            HStack {
+                Text("Sort by")
+                    .foregroundColor(.black)
+                Picker(selection: $sortingOption, label: Text("Sort")) {
+                    Text("title").tag(1)
+                    Text("rate").tag(2)
+                    Text("date").tag(3)
+                }
+                .padding(.horizontal)
+                .tint(Color.black)
+                .pickerStyle(.menu)
+                .border(Color.gray, width: 0.5)
+            }
+            .padding(2)
             
             List ($favCategory.favItems) { $item in
                     NavigationLink(destination: FavItemDetailView(favItem: $item)) {
@@ -64,6 +80,6 @@ struct ItemListView: View {
 
 struct FavListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemListView(favCategory: .constant(FavCategory.sampleData[0]))
+        ItemListView(favCategory: .constant())
     }
 }
