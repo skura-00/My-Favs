@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct My_Favs_App: App {
     @StateObject private var dataStorage = FavsStorage()
-
+    
     var body: some Scene {
         WindowGroup {
             CategoryListView(favCategoryData: $dataStorage.FavData) {

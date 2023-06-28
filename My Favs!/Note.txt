@@ -1,7 +1,11 @@
 
-Improvements:
+ideas:
 - Rating stars: Stars Image
 - FavItem: Add Image...?
 - Sorting
 - Favorite folder
 - search
+- Design
+- recommendation
+- SNS share
+- 

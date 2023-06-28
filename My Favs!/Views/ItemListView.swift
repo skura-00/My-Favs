@@ -80,6 +80,6 @@ struct ItemListView: View {
 
 struct FavListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemListView(favCategory: .constant())
+        ItemListView(favCategory: .constant(FavCategory.sampleData[0]))
     }
 }

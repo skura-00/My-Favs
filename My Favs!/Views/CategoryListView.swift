@@ -57,6 +57,29 @@ struct CategoryListView: View {
                     }
                     .accessibilityLabel(Text("New Item"))
                 }
+                
+                ToolbarItem (placement: .bottomBar) {
+                    HStack {
+                        Button(action: {
+                            
+                        }) {
+                            Image(systemName: "tray.2")
+                                .font(.system(size: 20))
+                                .padding(.horizontal, 60)
+                        }
+
+                        Button(action: {
+                            
+                        }) {
+                            Image(systemName: "magnifyingglass")
+                                .font(.system(size: 20))
+                                .foregroundColor(Color.gray)
+                                .padding(.horizontal, 60)
+                        }
+                        
+                        
+                    }
+                }
             }
             .sheet(isPresented: $isPresentingNewCategoryView) {
                 NewCategorySheet(favData: $favCategoryData, isPresentingNewCategoryView: $isPresentingNewCategoryView)
@@ -64,21 +87,6 @@ struct CategoryListView: View {
             .onChange(of: scenePhase) { phase in
                 if phase == .inactive { saveAction() }
             }
-            
-            HStack {
-                Image(systemName: "tray.2")
-                    .font(.system(size: 30))
-                    .padding(.horizontal, 20)
-                
-                NavigationLink(destination: ItemSearchView()) {
-                    Image(systemName: "magnifyingglass")
-                        .font(.system(size: 30))
-                        .padding(.horizontal, 20)
-                        .foregroundColor(Color.gray)
-                }
-             
-            }
-            .padding(8)
         }
         .foregroundColor(Color.orange)
         .tint(Color.orange)
