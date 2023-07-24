@@ -15,6 +15,8 @@
 		BB13C7622A36A847005976B9 /* NewFavItemSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7612A36A847005976B9 /* NewFavItemSheet.swift */; };
 		BB13C7642A36C674005976B9 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7632A36C674005976B9 /* IconPickerView.swift */; };
 		BB13C7662A36D4F5005976B9 /* FavCategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13C7652A36D4F5005976B9 /* FavCategoryColors.swift */; };
+		BB2C9A952A4BF5910049DC85 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C9A942A4BF5910049DC85 /* Recommendation.swift */; };
+		BB7F5C232A6F277600A0FD20 /* FavItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F5C222A6F277600A0FD20 /* FavItemRow.swift */; };
 		BBC2B78A2A3D935900CB72EB /* ItemSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2B7892A3D935900CB72EB /* ItemSearchView.swift */; };
 		BBE2BEB92A31942300564536 /* My_Favs_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEB82A31942300564536 /* My_Favs_App.swift */; };
 		BBE2BEBB2A31942300564536 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEBA2A31942300564536 /* CategoryListView.swift */; };
@@ -29,6 +31,8 @@
 		BBE2BEDB2A31CCF300564536 /* NewCategorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEDA2A31CCF200564536 /* NewCategorySheet.swift */; };
 		BBE2BEE12A32501400564536 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEE02A32501400564536 /* ItemListView.swift */; };
 		BBE2BEE52A326A7400564536 /* FavItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2BEE42A326A7400564536 /* FavItemDetailView.swift */; };
+		BBF01D932A5E43EB00B1E8AE /* MyFavsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF01D922A5E43EB00B1E8AE /* MyFavsTabView.swift */; };
+		BBF01DA52A5F5ACA00B1E8AE /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF01DA42A5F5ACA00B1E8AE /* SQLiteDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,8 @@
 		BB13C7612A36A847005976B9 /* NewFavItemSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFavItemSheet.swift; sourceTree = "<group>"; };
 		BB13C7632A36C674005976B9 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
 		BB13C7652A36D4F5005976B9 /* FavCategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCategoryColors.swift; sourceTree = "<group>"; };
+		BB2C9A942A4BF5910049DC85 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		BB7F5C222A6F277600A0FD20 /* FavItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavItemRow.swift; sourceTree = "<group>"; };
 		BBC2B7892A3D935900CB72EB /* ItemSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchView.swift; sourceTree = "<group>"; };
 		BBE2BEB52A31942300564536 /* My Favs!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Favs!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2BEB82A31942300564536 /* My_Favs_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Favs_App.swift; sourceTree = "<group>"; };
@@ -55,6 +61,8 @@
 		BBE2BEDA2A31CCF200564536 /* NewCategorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategorySheet.swift; sourceTree = "<group>"; };
 		BBE2BEE02A32501400564536 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		BBE2BEE42A326A7400564536 /* FavItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavItemDetailView.swift; sourceTree = "<group>"; };
+		BBF01D922A5E43EB00B1E8AE /* MyFavsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavsTabView.swift; sourceTree = "<group>"; };
+		BBF01DA42A5F5ACA00B1E8AE /* SQLiteDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 				BBE2BEBE2A31942400564536 /* Preview Content */,
 				BB13C7532A366DAD005976B9 /* Note.txt */,
 				BB0008592A37B6E1001677DD /* Localizable.strings */,
+				BB2C9A942A4BF5910049DC85 /* Recommendation.swift */,
 			);
 			path = "My Favs!";
 			sourceTree = "<group>";
@@ -124,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				BB13C7592A368A84005976B9 /* FavsStorage.swift */,
+				BBF01DA42A5F5ACA00B1E8AE /* SQLiteDB.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -131,6 +141,7 @@
 		BBE2BED32A31B5D600564536 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BBF01D922A5E43EB00B1E8AE /* MyFavsTabView.swift */,
 				BBC2B7892A3D935900CB72EB /* ItemSearchView.swift */,
 				BBE2BEBA2A31942300564536 /* CategoryListView.swift */,
 				BBE2BEE02A32501400564536 /* ItemListView.swift */,
@@ -141,6 +152,7 @@
 				BB0008532A3793D0001677DD /* FavItemEditView.swift */,
 				BBE2BED42A31BCAD00564536 /* CategoryRow.swift */,
 				BB13C7632A36C674005976B9 /* IconPickerView.swift */,
+				BB7F5C222A6F277600A0FD20 /* FavItemRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,14 +236,18 @@
 				BBE2BEC22A31942400564536 /* Persistence.swift in Sources */,
 				BBE2BEC52A31942400564536 /* My_Favs_.xcdatamodeld in Sources */,
 				BBE2BEBB2A31942300564536 /* CategoryListView.swift in Sources */,
+				BBF01DA52A5F5ACA00B1E8AE /* SQLiteDB.swift in Sources */,
 				BBE2BED72A31C0F600564536 /* FavCategoryIcons.swift in Sources */,
 				BB0008542A3793D0001677DD /* FavItemEditView.swift in Sources */,
 				BBE2BEB92A31942300564536 /* My_Favs_App.swift in Sources */,
 				BBE2BEE12A32501400564536 /* ItemListView.swift in Sources */,
+				BB2C9A952A4BF5910049DC85 /* Recommendation.swift in Sources */,
 				BBE2BEDB2A31CCF300564536 /* NewCategorySheet.swift in Sources */,
 				BB13C7642A36C674005976B9 /* IconPickerView.swift in Sources */,
 				BBE2BECE2A31B03300564536 /* FavCategory.swift in Sources */,
+				BBF01D932A5E43EB00B1E8AE /* MyFavsTabView.swift in Sources */,
 				BB13C75A2A368A84005976B9 /* FavsStorage.swift in Sources */,
+				BB7F5C232A6F277600A0FD20 /* FavItemRow.swift in Sources */,
 				BBE2BEE52A326A7400564536 /* FavItemDetailView.swift in Sources */,
 				BBE2BECC2A31ADD500564536 /* FavItem.swift in Sources */,
 				BBE2BED52A31BCAD00564536 /* CategoryRow.swift in Sources */,

@@ -8,9 +8,9 @@
 import SwiftUI
 //import CoreData
 
-
 struct CategoryListView: View {
-    @Binding var favCategoryData: [FavCategory]
+//    @Binding var favCategoryData: [FavCategory]
+    @State var favCategoryData: [FavCategory]
     /*#-code-walkthrough(5.eventData)*/
     @State private var isPresentingNewCategoryView = false
     @State private var selection: FavCategory?
@@ -18,32 +18,21 @@ struct CategoryListView: View {
     
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: ()->Void
+    let cols = [GridItem(.flexible()),
+                GridItem(.flexible())]
     
     var body: some View {
         NavigationStack {
-            
-            List ($favCategoryData) { $category in
-                NavigationLink(destination: ItemListView(favCategory: $category)) {
-                    CategoryRow(category: category)
-                        .swipeActions {
-                            Button(action: {
-                                selection = nil
-                                category.removeAll()
-                                favCategoryData.remove(at: favCategoryData.firstIndex(of: category) ?? 0) // ??
-                            }) {
-                                Image(systemName: "trash")
-                            }
+            ScrollView {
+                LazyVGrid(columns: cols) {
+                    ForEach($favCategoryData, id: \.self) { $category in
+                        NavigationLink(destination: ItemListView(favCategory: category)) {
+                            
+                            CategoryRow(category: category)
                         }
+                    }
                 }
-                .listRowSeparator(.hidden)
-                .listRowBackground(
-                    Rectangle()
-                        .fill(Color.white)
-                        .padding(3)
-                    
-                )
-                .padding(8)
-                
+                .padding(.horizontal)
             }
             .foregroundColor(Color.black)
             .navigationTitle(Text("Category"))
@@ -56,29 +45,6 @@ struct CategoryListView: View {
                             .foregroundColor(Color.orange)
                     }
                     .accessibilityLabel(Text("New Item"))
-                }
-                
-                ToolbarItem (placement: .bottomBar) {
-                    HStack {
-                        Button(action: {
-                            
-                        }) {
-                            Image(systemName: "tray.2")
-                                .font(.system(size: 20))
-                                .padding(.horizontal, 60)
-                        }
-
-                        Button(action: {
-                            
-                        }) {
-                            Image(systemName: "magnifyingglass")
-                                .font(.system(size: 20))
-                                .foregroundColor(Color.gray)
-                                .padding(.horizontal, 60)
-                        }
-                        
-                        
-                    }
                 }
             }
             .sheet(isPresented: $isPresentingNewCategoryView) {
@@ -100,6 +66,6 @@ struct CategoryListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryListView(favCategoryData: .constant(FavsStorage().FavData), saveAction: {})
+        CategoryListView(favCategoryData: FavCategory.sampleData, saveAction: {})
     }
 }

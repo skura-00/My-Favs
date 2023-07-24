@@ -26,21 +26,21 @@ struct ItemSearchView: View {
                 
             }
             
-            HStack {
-                NavigationLink(destination: CategoryListView(favCategoryData: .constant(FavsStorage().FavData), saveAction: {})) {
-                    Image(systemName: "tray.2")
-                        .font(.system(size: 30))
-                        .padding(.horizontal, 20)
-                        .foregroundColor(Color.gray)
-                }
-                
-                Image(systemName: "magnifyingglass")
-                    .font(.system(size: 30))
-                    .padding(.horizontal, 20)
-                    .foregroundColor(Color.orange)
-            
-            }
-            .padding(8)
+//            HStack {
+//                NavigationLink(destination: CategoryListView(favCategoryData: .constant(FavsStorage().FavData), saveAction: {})) {
+//                    Image(systemName: "tray.2")
+//                        .font(.system(size: 30))
+//                        .padding(.horizontal, 20)
+//                        .foregroundColor(Color.gray)
+//                }
+//                
+//                Image(systemName: "magnifyingglass")
+//                    .font(.system(size: 30))
+//                    .padding(.horizontal, 20)
+//                    .foregroundColor(Color.orange)
+//            
+//            }
+//            .padding(8)
         }
         .navigationBarBackButtonHidden(true)
         

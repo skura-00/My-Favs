@@ -23,19 +23,20 @@ struct IconPickerView: View {
             
             Divider()
             
-            HStack {
-                ForEach(FavCategoryColors.all, id: \.self) { color in
-                    Button {
-                        selectedColor = color
-                        category.color = color.rgbaColor
-                    } label: {
-                        Circle()
-                            .foregroundColor(color)
-                    }
-                }
-            }
-            .padding(.horizontal)
-            .frame(height: 50)
+//            ColorPicker(selection: $selectedColor)
+//            HStack {
+//                ForEach(FavCategoryColors.all, id: \.self) { color in
+//                    Button {
+//                        selectedColor = color
+//                        category.color = color.rgbaColor
+//                    } label: {
+//                        Circle()
+//                            .foregroundColor(color)
+//                    }
+//                }
+//            }
+//            .padding(.horizontal)
+//            .frame(height: 50)
             
             LazyVGrid(columns: column) {
                 ForEach(FavCategoryIcons.iconNames, id: \.self) { icon in
@@ -53,9 +54,9 @@ struct IconPickerView: View {
             }
             .frame(maxHeight: .infinity)
         }
-        .onAppear {
-            selectedColor = Color(category.color)
-        }
+//        .onAppear {
+//            selectedColor = Color(category.color)
+//        }
     }
 }
 

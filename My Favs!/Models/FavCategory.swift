@@ -10,20 +10,20 @@ import SwiftUI
 struct FavCategory: Identifiable, Hashable, Codable {
     var id: UUID
     var icon: String = FavCategoryIcons.iconName()
-    var color: RGBAColor = FavCategoryColors.getColor().rgbaColor
+//    var color: Color //RGBAColor = FavCategoryColors.getColor().rgbaColor
     var label: String
     var favItems: [FavItem]
     
-    init(id: UUID = UUID(), icon: String, color: RGBAColor, label: String, favItems: [FavItem]) {
+    init(id: UUID = UUID(), icon: String/*, color: RGBAColor*/, label: String, favItems: [FavItem]) {
         self.id = id
         self.icon = icon
-        self.color = color
+//        self.color = color
         self.label = label
         self.favItems = favItems
     }
     
     static var emptyCategory: FavCategory {
-        FavCategory(icon: FavCategoryIcons.iconName(), color: FavCategoryColors.getColor().rgbaColor, label: String(), favItems: [])
+        FavCategory(icon: FavCategoryIcons.iconName()/*, color: FavCategoryColors.getColor().rgbaColor*/, label: String(), favItems: [])
     }
     
     mutating func removeAll() {
@@ -48,18 +48,31 @@ extension FavCategory {
     static let sampleData: [FavCategory] = [
         FavCategory(
             icon: "film.fill",
-            color:  FavCategoryColors.getColor().rgbaColor,
-            label: "Movie",
+//            color:  FavCategoryColors.getColor()/*.rgbaColor*/,
+            label: "Movies",
             favItems: [
-                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!")
+                FavItem(title: "Title 1", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Title 2", rate: 8.5, desc: "Great TV Show!")
             ]
         ),
         FavCategory(
             icon: "star.fill",
-            color:  FavCategoryColors.getColor().rgbaColor,
+//            color:  FavCategoryColors.getColor()/*.rgbaColor*/,
             label: "Favorite",
             favItems: [
-                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!")
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
             ]
         )
     ]

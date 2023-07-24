@@ -13,25 +13,14 @@ struct CategoryEditView: View {
     
     var body: some View {
         VStack {
-            List {
-                Button {
-                    isPickingIcon.toggle()
-                } label: {
-                    Image(systemName: favCategory.icon)
-                        .foregroundColor(Color(favCategory.color))
-                        .imageScale(.large)
-                        .font(.title3)
+            Form {
+                Section (header: Text("Category Title")) {
+                    TextField("New Category", text: $favCategory.label)
+                        .font(.title2)
                 }
-                .buttonStyle(.plain)
-                .padding(.vertical, 5)
-                .frame(alignment: .center)
                 
-                TextField("New Category", text: $favCategory.label)
-                    .font(.title2)
             }
-            .sheet(isPresented: $isPickingIcon) {
-                IconPickerView(category: $favCategory)
-            }
+        
         }
         .foregroundColor(Color.black)
     }

@@ -13,22 +13,23 @@ struct My_Favs_App: App {
     
     var body: some Scene {
         WindowGroup {
-            CategoryListView(favCategoryData: $dataStorage.FavData) {
-                Task {
-                    do {
-                        try await dataStorage.save(FavData: dataStorage.FavData)
-                    } catch {
-                        fatalError(error.localizedDescription)
-                    }
-                }
-            }
-            .task {
-                do {
-                    try await dataStorage.load()
-                } catch {
-                    fatalError(error.localizedDescription)
-                }
-            }
+            MyFavsTabView(/*favCategoryData: $dataStorage.FavData*/)
+//            {
+//                Task {
+//                    do {
+//                        try await dataStorage.save(FavData: dataStorage.FavData)
+//                    } catch {
+//                        fatalError(error.localizedDescription)
+//                    }
+//                }
+//            }
+//            .task {
+//                do {
+//                    try await dataStorage.load()
+//                } catch {
+//                    fatalError(error.localizedDescription)
+//                }
+//            }
         }
         
     }
