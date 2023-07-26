@@ -68,6 +68,7 @@ struct FavItemEditView: View {
             }
             
         }
+        .tint(.yellow)
         .foregroundColor(Color.orange)
     }
 }

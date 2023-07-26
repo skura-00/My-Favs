@@ -57,6 +57,7 @@ struct NewFavItemSheet: View {
                     Button("Cancel") {
                         isPresentingNewItemView = false
                     }
+                    .foregroundColor(.gray)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
@@ -64,12 +65,20 @@ struct NewFavItemSheet: View {
                         newItem.date = Date()
                         isPresentingNewItemView = false
                     }
+                    .foregroundColor(titleIsEmpty ? .gray : .orange)
+                    .disabled(titleIsEmpty)
                 }
             }
         }
         .foregroundColor(Color.orange)
         
     }
+    
+    
+    var titleIsEmpty: Bool {
+        return newItem.title.isEmpty
+    }
+    
 }
 
 struct NewFavItemSheet_Previews: PreviewProvider {

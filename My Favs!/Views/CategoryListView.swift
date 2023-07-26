@@ -26,7 +26,7 @@ struct CategoryListView: View {
             ScrollView {
                 LazyVGrid(columns: cols) {
                     ForEach($favCategoryData, id: \.self) { $category in
-                        NavigationLink(destination: ItemListView(favCategory: category)) {
+                        NavigationLink(destination: FavItemView(favCategory: category)) {
                             
                             CategoryRow(category: category)
                         }
@@ -55,7 +55,7 @@ struct CategoryListView: View {
             }
         }
         .foregroundColor(Color.orange)
-        .tint(Color.orange)
+        .tint(.black)
         .navigationBarBackButtonHidden(true)
         
         

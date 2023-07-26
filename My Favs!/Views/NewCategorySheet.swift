@@ -19,7 +19,7 @@ struct NewCategorySheet: View {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel") {
                             isPresentingNewCategoryView = false
-                        }.foregroundColor(Color.orange)
+                        }.foregroundColor(Color.gray)
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {

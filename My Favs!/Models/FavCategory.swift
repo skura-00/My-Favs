@@ -51,8 +51,19 @@ extension FavCategory {
 //            color:  FavCategoryColors.getColor()/*.rgbaColor*/,
             label: "Movies",
             favItems: [
-                FavItem(title: "Title 1", rate: 8.5, desc: "Great TV Show!"),
-                FavItem(title: "Title 2", rate: 8.5, desc: "Great TV Show!")
+                FavItem(title: "NARUTO -ナルト-", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "魔法科高校の劣等生　Season 2 俺がうずまきナルトだってばよ！", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
+                FavItem(title: "Station 18", rate: 8.5, desc: "Great TV Show!"),
             ]
         ),
         FavCategory(

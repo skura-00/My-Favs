@@ -18,7 +18,6 @@ struct CategoryEditView: View {
                     TextField("New Category", text: $favCategory.label)
                         .font(.title2)
                 }
-                
             }
         
         }
