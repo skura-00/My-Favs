@@ -5,31 +5,29 @@
 //  Created by Sachi Kurata on 2023/06/07.
 //
 
-import SwiftUI
+import Foundation
 
-struct FavItem: Identifiable, Hashable, Codable {
-    var id: UUID
-    var title: String
-    var rate: Double
-    var desc: String
-    var date: Date
+class FavItem: ObservableObject, Identifiable {
+    @Published var itemId: Int64
+    @Published var categoryId: Int64
+    @Published var title: String
+    @Published var rate: Double
+    @Published var desc: String
+    @Published var tags: TagsList
+    @Published var date: Date
     
-    init(id: UUID = UUID(), title: String, rate: Double, desc: String, date: Date = Date()) {
-        self.id = id
+    init(itemId: Int64, categoryId: Int64, title: String, rate: Double,
+         desc: String, tags: TagsList = TagsList(), date: Date = Date()) {
+        self.itemId = itemId
+        self.categoryId = categoryId
         self.title = title
         self.rate = rate
         self.desc = desc
+        self.tags = tags
         self.date = date
     }
-
-    static var emptyItem: FavItem {
-        FavItem(title: String(), rate: 0.0, desc: "")
-    }
     
-}
-
-extension FavItem {
-    static let sampleData: [FavItem] = [
-        FavItem(title: "となりのロロロ", rate: 9.5, desc: "あなたロロロっていうの！？")
-    ]
+    static var emptyItem: FavItem {
+        FavItem(itemId: 0, categoryId: 0, title: String(), rate: 0, desc: String())
+    }
 }

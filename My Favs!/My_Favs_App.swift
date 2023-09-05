@@ -9,27 +9,12 @@ import SwiftUI
 
 @main
 struct My_Favs_App: App {
-    @StateObject private var dataStorage = FavsStorage()
     
     var body: some Scene {
         WindowGroup {
-            MyFavsTabView(/*favCategoryData: $dataStorage.FavData*/)
-//            {
-//                Task {
-//                    do {
-//                        try await dataStorage.save(FavData: dataStorage.FavData)
-//                    } catch {
-//                        fatalError(error.localizedDescription)
-//                    }
-//                }
-//            }
-//            .task {
-//                do {
-//                    try await dataStorage.load()
-//                } catch {
-//                    fatalError(error.localizedDescription)
-//                }
-//            }
+            HomeView()
+                .environmentObject(FavsList())
+                .environmentObject(TagsList())
         }
         
     }

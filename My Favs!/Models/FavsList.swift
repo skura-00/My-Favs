@@ -1,30 +1,19 @@
 //
-//  FavCategory.swift
+//  FavsList.swift
 //  My Favs!
 //
-//  Created by Sachi Kurata on 2023/06/07.
+//  Created by 倉田沙智 on 2023/09/01.
 //
 
 import Foundation
 
-class FavCategory: ObservableObject, Identifiable {
-    @Published var categoryId: Int64
-    @Published var label: String
-    @Published var favItems: [FavItem]
-    
-    init(categoryId: Int64, label: String, favItems: [FavItem] = []) {
-        self.categoryId = categoryId
-        self.label = label
-        self.favItems = favItems
-    }
-    
-    static var emptyCategory: FavCategory {
-        FavCategory(categoryId: 0, label: String())
-    }
-    
-}
 
-extension FavCategory {
+class FavsList: ObservableObject {
+    @Published var categoryList: [FavCategory]
+    
+    init(categoryList: [FavCategory] = SQLiteDB.shared.getAllCategories()) {
+        self.categoryList = categoryList
+    }
     
     static let sampleData: [FavCategory] = [
         FavCategory(
@@ -47,5 +36,5 @@ extension FavCategory {
             ]
         )
     ]
-    
 }
+

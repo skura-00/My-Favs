@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-
 struct FavItemDetailView: View {
-    @Binding var favItem: FavItem
+    @EnvironmentObject var favItem: FavItem
     @State private var isPresentingEditView = false
     
     var body: some View {
@@ -28,15 +27,11 @@ struct FavItemDetailView: View {
                         .foregroundColor(.gray)
                 }
                 
-                
-                    
                 Text("\(favItem.desc)")
                     .font(.body)
                         .lineLimit(10)
                         .multilineTextAlignment(.leading)
-                
                     Spacer()
-                
             }
             .foregroundColor(Color.black)
             .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -50,7 +45,8 @@ struct FavItemDetailView: View {
                 }
             }
             .sheet(isPresented: $isPresentingEditView) {
-                FavItemEditView(favItem: $favItem, isPresentingEditView: $isPresentingEditView)
+                FavItemEditView(isPresentingEditView: $isPresentingEditView)
+                    .environmentObject(favItem)
             }
         }
         .foregroundColor(Color.orange)
@@ -65,8 +61,9 @@ struct FavItemDetailView: View {
     
 }
 
-struct FavDetailView_Previews: PreviewProvider {
+struct FavItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FavItemDetailView(favItem: .constant(FavItem.sampleData[0]))
+        FavItemDetailView()
+            .environmentObject(FavCategory.sampleData[0].favItems[0])
     }
 }

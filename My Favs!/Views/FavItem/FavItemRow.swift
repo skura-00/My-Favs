@@ -8,33 +8,36 @@
 import SwiftUI
 
 struct FavItemRow: View {
+    @State var item: FavItem
+    
     var body: some View {
         ZStack (alignment: .leading) {
             Color(uiColor: .white)
                 .overlay(
                     RoundedRectangle(cornerRadius: 5)
-                        .stroke(.gray, lineWidth: 3)
+                        .stroke(.black, lineWidth: 2)
                 )
             
-            VStack (alignment: .leading) {
-                Text("Title")
+            HStack (alignment: .center) {
+                Text("\(String(format: "%0.1f", item.rate))")
+                    .foregroundColor(.orange)
+                    .font(.system(size: 28))
+                    .fontWeight(.bold)
+                
+                Text("\(item.title)")
                     .font(.title3)
                     .padding(.bottom, 1)
                     .foregroundColor(.black)
                 
-                Text("10")
-                    .foregroundColor(.orange)
-                    .font(.subheadline)
             }
-            .padding(EdgeInsets(top: 14, leading: 18, bottom: 14, trailing: 18))
+            .padding(EdgeInsets(top: 20, leading: 14, bottom: 20, trailing: 14))
         }
-        .padding()
         .frame(height: 20)
     }
 }
 
 struct FavItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        FavItemRow()
+        FavItemRow(item: FavsList.sampleData[0].favItems[0])
     }
 }
