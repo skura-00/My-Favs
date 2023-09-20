@@ -14,7 +14,6 @@ struct NewFavItemSheet: View {
     @ObservedObject var newItem = FavItem.emptyItem
     @State private var isSliding = false
     let wordLimit = 250
-    @State private var input: String = ""
     
     var body: some View {
         let text = Binding(

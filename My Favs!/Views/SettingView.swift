@@ -21,9 +21,7 @@ struct SettingView: View {
                     Text("Delete all categories")
                         .foregroundColor(.red)
                 })
-                .buttonStyle(.borderedProminent)
-                .background(.white)
-                .confirmationDialog("Are you sure to delete all categories?", isPresented: $isDropSelected, titleVisibility: .visible) {
+                .confirmationDialog("Are you sure to delete all categories? \n Tags will not be deleted", isPresented: $isDropSelected, titleVisibility: .visible) {
                     Button("Yes") {
                         if(SQLiteDB.shared.deleteItemTable() && SQLiteDB.shared.deleteCategoryTable()) {
                             SQLiteDB.shared.createFavCategoryTable()
@@ -37,7 +35,6 @@ struct SettingView: View {
                         isDropSelected = false
                     }
                 }
-//                .frame(width: 340, height: 40)
             }
             .padding()
             .scrollDisabled(true)

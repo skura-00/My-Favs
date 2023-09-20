@@ -11,7 +11,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var favs: FavsList
-    @EnvironmentObject var tags: TagsList
+//    @EnvironmentObject var tags: TagsList
     @StateObject var toRoot: ToRoot = ToRoot()
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
@@ -60,13 +60,13 @@ struct HomeView: View {
                 Text("Category")
             }
             
-            TagView()
-                .environmentObject(tags)
-                .tag("tags")
-                .tabItem {
-                    Image(systemName: "tag.fill")
-                    Text("Tags")
-                }
+//            TagView()
+//                .environmentObject(tags)
+//                .tag("tags")
+//                .tabItem {
+//                    Image(systemName: "tag.fill")
+//                    Text("Tags")
+//                }
             
             SettingView()
                 .environmentObject(favs)
@@ -76,7 +76,6 @@ struct HomeView: View {
                     Text("Settings")
                 }
         }
-        .navigationBarBackButtonHidden(true)
         .onReceive(toRoot.$selected) { selection in
             toRoot.toRoot.toggle()
         }
@@ -88,7 +87,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
             HomeView()
                 .environmentObject(FavsList())
-                .environmentObject(TagsList())
+//                .environmentObject(TagsList())
                 .preferredColorScheme(.light)
     }
 }

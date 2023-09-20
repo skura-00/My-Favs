@@ -11,13 +11,13 @@ struct FavItemEditView: View {
     @EnvironmentObject var favItem: FavItem
     @Binding var isPresentingEditView: Bool
     @State private var isSliding = false
-    private let wordLimit = 250
+//    private let wordLimit = 250
     
     var body: some View {
-        let text = Binding(
-            get: { favItem.desc },
-            set: { favItem.desc = String($0.prefix(wordLimit))}
-        )
+//        let text = Binding(
+//            get: { favItem.desc },
+//            set: { favItem.desc = String($0.prefix(wordLimit))}
+//        )
         
         NavigationStack {
             Form {
@@ -43,15 +43,15 @@ struct FavItemEditView: View {
                 }
                 
                 Section (header: Text("Description")) {
-                    TextField("Description", text: text, axis: .vertical)
+                    TextField("Description", text: $favItem.desc, axis: .vertical)
                         .font(.title3)
                         .lineLimit(1...9)
                         .padding(5.0)
                         .frame(maxHeight: 200, alignment: .topLeading)
                         .foregroundColor(.black)
                     
-                    Text("\(text.wrappedValue.count)/\(wordLimit)")
-                        .foregroundColor(Color.gray)
+//                    Text("\(text.wrappedValue.count)/\(wordLimit)")
+//                        .foregroundColor(Color.gray)
                 }
             }
             .toolbar {

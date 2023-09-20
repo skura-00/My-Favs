@@ -13,17 +13,17 @@ class FavItem: ObservableObject, Identifiable {
     @Published var title: String
     @Published var rate: Double
     @Published var desc: String
-    @Published var tags: TagsList
+//    @Published var tags: TagsList
     @Published var date: Date
     
     init(itemId: Int64, categoryId: Int64, title: String, rate: Double,
-         desc: String, tags: TagsList = TagsList(), date: Date = Date()) {
+         desc: String/*, tags: TagsList = TagsList()*/, date: Date = Date()) {
         self.itemId = itemId
         self.categoryId = categoryId
         self.title = title
         self.rate = rate
         self.desc = desc
-        self.tags = tags
+//        self.tags = tags
         self.date = date
     }
     

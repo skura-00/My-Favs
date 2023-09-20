@@ -29,8 +29,8 @@ class SQLiteDB {
     private let date = Expression<Date>("date")
     
     // Tags
-    private let tagId = Expression<Int64>("tagId")
-    private let name = Expression<String>("name")
+//    private let tagId = Expression<Int64>("tagId")
+//    private let name = Expression<String>("name")
     
     // Item Tags
     
@@ -47,12 +47,13 @@ class SQLiteDB {
                 let dbPath = dirPath.appendingPathComponent(Self.fileName).path
                 db = try Connection(dbPath)
                 
-                try db?.run(favItem.drop(ifExists: true))
-                try db?.run(favCategory.drop(ifExists: true))
-                try db?.run(tags.drop(ifExists: true))
+//                try db?.run(favItem.drop(ifExists: true))
+//                try db?.run(favCategory.drop(ifExists: true))
+//                try db?.run(tags.drop(ifExists: true))
                 
                 createFavCategoryTable()
                 createFavItemTable()
+//                createTagsTable()
                 print("SQLiteDB initialized successfully at: \(dbPath) ")
             } catch {
                 db = nil
@@ -103,24 +104,7 @@ class SQLiteDB {
             print("Error: \(error)")
         }
     }
-    
-    func createTagsTable() {
-        guard let database = db else {
-            return
-        }
         
-        // CREATE TABLE Tags
-        do {
-            try database.run(tags.create { table in
-                table.column(tagId, primaryKey: .autoincrement)
-                table.column(name)
-            })
-            print("Tags Table created successfully")
-        } catch {
-            print(error)
-        }
-    }
-    
     func insertCategory(label: String) -> Int64? {
         guard let database = db else { return nil }
 
@@ -157,24 +141,7 @@ class SQLiteDB {
         }
     }
 
-    func insertTag(name: String) -> Int64? {
-        guard let database = db else { return nil }
-
-        let insert = tags.insert(self.name <- name)
-
-        do {
-            let id = try database.run(insert)
-            print("Tag added successfully: ID = \(id)")
-            return id
-        } catch {
-            print(error)
-            return nil
-        }
-    }
     
-    func insertItemTag(itemId: Int64, tagId: Int64) {
-        
-    }
 
     func getAllCategories() -> [FavCategory] {
         var categories: [FavCategory] = []
@@ -237,19 +204,7 @@ class SQLiteDB {
         return items.count
     }
     
-    func getAllTags() -> [Tag] {
-        var tags: [Tag] = []
-        guard let database = db else { return [] }
-        
-        do {
-            for tag in try database.prepare(self.tags) {
-                tags.append(Tag(tagId: tag[tagId], name: tag[name]))
-            }
-        } catch {
-           print(error)
-        }
-        return tags
-    }
+    
     
     
     func findItem(id: Int64, categoryId: Int64) -> FavItem? {
@@ -316,7 +271,7 @@ class SQLiteDB {
             return false
         }
     }
-
+    
     func deleteItemTable() -> Bool {
         guard let database = db else { return false }
         
@@ -348,6 +303,72 @@ class SQLiteDB {
             return false
         }
     }
+    
+    
+//    func createTagsTable() {
+//        guard let database = db else {
+//            return
+//        }
+//
+//        // CREATE TABLE Tags
+//        do {
+//            try database.run(tags.create { table in
+//                table.column(tagId, primaryKey: .autoincrement)
+//                table.column(name)
+//            })
+//            print("Tags Table created successfully")
+//        } catch {
+//            print(error)
+//        }
+//    }
+//
+//
+//    func insertTag(name: String) -> Int64? {
+//        guard let database = db else { return nil }
+//
+//        let insert = tags.insert(self.name <- name)
+//
+//        do {
+//            let id = try database.run(insert)
+//            print("Tag added successfully: ID = \(id)")
+//            return id
+//        } catch {
+//            print(error)
+//            return nil
+//        }
+//    }
+//
+//    func insertItemTag(itemId: Int64, tagId: Int64) {
+//    }
+//
+//    func getAllTags() -> [Tag] {
+//        var tags: [Tag] = []
+//        guard let database = db else { return [] }
+//
+//        do {
+//            for tag in try database.prepare(self.tags) {
+//                tags.append(Tag(tagId: tag[tagId], name: tag[name]))
+//            }
+//        } catch {
+//           print(error)
+//        }
+//        return tags
+//    }
+//
+//    func deleteTag(tagId: Int64) -> Bool {
+//        guard let database = db else {
+//            return false
+//        }
+//        do {
+//            let filter = tags.filter(self.tagId == tagId)
+//            try database.run(filter.delete())
+//            print("tag deleted")
+//            return true
+//        } catch {
+//            print(error)
+//            return false
+//        }
+//    }
 
 }
 

@@ -15,6 +15,7 @@ class FavsList: ObservableObject {
         self.categoryList = categoryList
     }
     
+    
     static let sampleData: [FavCategory] = [
         FavCategory(
             categoryId: 0,

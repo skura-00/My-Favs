@@ -14,7 +14,7 @@ struct My_Favs_App: App {
         WindowGroup {
             HomeView()
                 .environmentObject(FavsList())
-                .environmentObject(TagsList())
+//                .environmentObject(TagsList())
         }
         
     }

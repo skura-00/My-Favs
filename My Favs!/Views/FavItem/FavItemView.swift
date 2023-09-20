@@ -22,7 +22,8 @@ struct FavItemView: View {
     
     
     var sortedItems: [FavItem] {
-        let items = favCategory.favItems
+        let items = SQLiteDB.shared.getAllItems(id: favCategory.categoryId)
+//        favCategory.favItems
         
         if (sorting == 1) {
             switch sortOp {
@@ -47,6 +48,13 @@ struct FavItemView: View {
     
     var body: some View {
         NavigationStack {
+            Picker("", selection: $sortOp) {
+                ForEach(SortOption.allCases) { option in
+                    Text("\(option.description())")
+                }
+            }
+            .pickerStyle(.automatic)
+            
             List {
                 ForEach(sortedItems) { item in
                     FavItemRow(item: item)
@@ -69,22 +77,16 @@ struct FavItemView: View {
             }
             .listStyle(.plain)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem {
                     Picker("", selection: $sorting) {
                         Text("Ascending").tag(1)
                         Text("Descending").tag(2)
                     }
-                    .pickerStyle(.automatic)
+                    .pickerStyle(.inline)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Picker("", selection: $sortOp) {
-                        ForEach(SortOption.allCases) { option in
-                            Text("\(option.description())")
-                        }
-                    }
-                    .pickerStyle(.automatic)
-                }
-                ToolbarItem (placement: .navigationBarTrailing) {
+//                ToolbarItem {
+//                }
+                ToolbarItem {
                     Button (action: {
                         isPresentingNewItemView = true
                     }) {
