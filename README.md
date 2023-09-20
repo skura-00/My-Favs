@@ -2,7 +2,6 @@
 好きなものをリスト化できるアプリ</br>
 Make a list of your favorites</br>
 
-### Tools
 - Swift
 - SQLite
 
