@@ -1,7 +1,15 @@
-# My-Favs
+# My Favs!
 
+好きなものをリスト化できるアプリ
 
-### Reference
+### features
+- Add categories
+- Add items to a category
+- Sort items by Date Added, Rate, and Title
+- Edit items
+- Delete items
+- Delete all categories
+
 <div display="flex">
 <img width="200" alt="categoryList" src="https://github.com/skura-00/My-Favs/assets/105990444/57bcf716-314d-4a1c-818a-06dc7b6f198c">
 <img width="200" alt="ItemList" src="https://github.com/skura-00/My-Favs/assets/105990444/a1c512f1-7178-42d8-9bf4-56b1c435f741">
