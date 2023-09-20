@@ -1,5 +1,4 @@
 # My Favs!
-(This app is not published) </br>
 好きなものをリスト化できるアプリ</br>
 Make a list of your favorites</br>
 
@@ -17,3 +16,6 @@ Make a list of your favorites</br>
 <img width="200" alt="Detail" src="https://github.com/skura-00/My-Favs/assets/105990444/0013a5d3-0d6d-4c57-8bdb-48a4cd122991">
 <img width="200" alt="AddItem" src="https://github.com/skura-00/My-Favs/assets/105990444/f8388c1c-d7bf-41c2-b30b-98501e2765a0">
 </div>
+
+
+(This app is not published) </br>
