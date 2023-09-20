@@ -1,5 +1,5 @@
 # My Favs!
-
+(This app is not published)
 好きなものをリスト化できるアプリ
 Make a list of your favorites
 
