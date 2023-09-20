@@ -1,6 +1,7 @@
 # My Favs!
 
 好きなものをリスト化できるアプリ
+Make a list of your favorites
 
 ### features
 - Add categories
