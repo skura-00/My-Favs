@@ -1,7 +1,7 @@
 # My Favs!
-(This app is not published)
-好きなものをリスト化できるアプリ
-Make a list of your favorites
+(This app is not published) </br>
+好きなものをリスト化できるアプリ</br>
+Make a list of your favorites</br>
 
 ### features
 - Add categories
