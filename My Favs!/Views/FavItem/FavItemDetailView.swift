@@ -2,7 +2,7 @@
 //  FavItemDetailView.swift
 //  My Favs!
 //
-//  Created by Sachi Kurata on 2023/06/08.
+//  Created by SK on 2023/06/08.
 //
 
 import SwiftUI
@@ -49,7 +49,7 @@ struct FavItemDetailView: View {
                     .environmentObject(favItem)
             }
         }
-        .foregroundColor(Color.orange)
+//        .foregroundColor(Color.orange)
         
     }
     

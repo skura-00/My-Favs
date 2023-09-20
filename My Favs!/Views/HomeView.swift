@@ -2,7 +2,7 @@
 //  MyFavsTabView.swift
 //  My Favs!
 //
-//  Created by 倉田沙智 on 2023/07/11.
+//  Created by SK on 2023/07/11.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  ItemListView.swift
 //  My Favs!
 //
-//  Created by Sachi Kurata on 2023/06/08.
+//  Created by SK on 2023/06/08.
 //
 // https://sarunw.com/posts/swiftui-picker-enum/
 

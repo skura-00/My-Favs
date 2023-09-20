@@ -2,16 +2,28 @@
   Localizable.strings
   My Favs!
 
-  Created by Sachi Kurata on 2023/06/12.
+  Created by SK on 2023/06/12.
   
 */
 
-"Title" = "タイトル";
-"Rate" = "評価";
-"Description" = "コメント";
 "Category" = "カテゴリー";
+"CATEGORY TITLE" = "カテゴリー名";
+"Settings" = "設定";
+"Title" = "タイトル";
+"TITLE" = "タイトル";
+"Rate" = "評価";
+"RATE" = "評価";
+"Description" = "コメント";
+"DESCRIPTION" = "コメント";
+
 "Cancel" = "キャンセル";
 "Add" = "追加";
 "Edit" = "編集";
 "Finish" = "完了";
+"Ascending" = "昇順";
+"Discending" = "降順";
+"Date Added" = "日付";
+"Delete all categories" = "全てのカテゴリーを削除";
+"Are you sure to delete all categories?" = "本当に全てのアイテムを削除しますか？";
+"Delete" = "削除";
 

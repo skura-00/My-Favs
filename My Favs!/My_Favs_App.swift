@@ -2,7 +2,7 @@
 //  My_Favs_App.swift
 //  My Favs!
 //
-//  Created by Sachi Kurata on 2023/06/07.
+//  Created by SK on 2023/06/07.
 //
 
 import SwiftUI

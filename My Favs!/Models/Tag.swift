@@ -2,7 +2,7 @@
 ////  Tag.swift
 ////  My Favs!
 ////
-////  Created by 倉田沙智 on 2023/09/01.
+////  Created by SK on 2023/09/01.
 ////
 //
 //import Foundation

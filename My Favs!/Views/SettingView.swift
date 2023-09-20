@@ -2,7 +2,7 @@
 //  SettingView.swift
 //  My Favs!
 //
-//  Created by 倉田沙智 on 2023/09/01.
+//  Created by SK on 2023/09/01.
 //
 
 import SwiftUI
@@ -21,8 +21,8 @@ struct SettingView: View {
                     Text("Delete all categories")
                         .foregroundColor(.red)
                 })
-                .confirmationDialog("Are you sure to delete all categories? \n Tags will not be deleted", isPresented: $isDropSelected, titleVisibility: .visible) {
-                    Button("Yes") {
+                .confirmationDialog("Are you sure to delete all categories?", isPresented: $isDropSelected, titleVisibility: .visible) {
+                    Button("Delete") {
                         if(SQLiteDB.shared.deleteItemTable() && SQLiteDB.shared.deleteCategoryTable()) {
                             SQLiteDB.shared.createFavCategoryTable()
                             SQLiteDB.shared.createFavItemTable()
@@ -31,7 +31,7 @@ struct SettingView: View {
                         isDropSelected = false
                     }
                     
-                    Button("No") {
+                    Button("Cancel") {
                         isDropSelected = false
                     }
                 }

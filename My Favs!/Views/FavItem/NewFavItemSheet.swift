@@ -2,7 +2,7 @@
 //  NewFavItemSheet.swift
 //  My Favs!
 //
-//  Created by Sachi Kurata on 2023/06/11.
+//  Created by SK on 2023/06/11.
 //
 
 import SwiftUI
@@ -53,9 +53,6 @@ struct NewFavItemSheet: View {
                        .foregroundColor(Color.gray)
                }
                 
-                Section (header: Text("Tag")) {
-                    
-               }
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

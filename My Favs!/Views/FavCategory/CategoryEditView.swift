@@ -2,7 +2,7 @@
 //  CategoryEditView.swift
 //  My Favs!
 //
-//  Created by Sachi Kurata on 2023/06/11.
+//  Created by SK on 2023/06/11.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  ItemSearchView.swift
 //  My Favs!
 //
-//  Created by 倉田沙智 on 2023/06/17.
+//  Created by SK on 2023/06/17.
 //
 
 import SwiftUI

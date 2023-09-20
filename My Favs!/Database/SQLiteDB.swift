@@ -2,7 +2,7 @@
 //  SQLiteDB.swift
 //  My Favs!
 //
-//  Created by Sachi K on 2023/07/12.
+//  Created by SK on 2023/07/12.
 //
 
 import SQLite

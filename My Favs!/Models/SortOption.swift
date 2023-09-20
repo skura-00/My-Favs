@@ -2,7 +2,7 @@
 //  SortOption.swift
 //  My Favs!
 //
-//  Created by 倉田沙智 on 2023/08/27.
+//  Created by SK on 2023/08/27.
 //
 
 import Foundation
