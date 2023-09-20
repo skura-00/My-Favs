@@ -2,7 +2,11 @@
 好きなものをリスト化できるアプリ</br>
 Make a list of your favorites</br>
 
-### features
+### Tools
+- Swift
+- SQLite
+
+### Features
 - Add categories
 - Add items to a category
 - Sort items by Date Added, Rate, and Title
